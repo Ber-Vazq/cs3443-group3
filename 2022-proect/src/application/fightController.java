@@ -155,7 +155,7 @@ public class fightController extends ClassSelectController {
 		
 		//mage/psion attack roll
 		
-		if(job==1) {
+		if(job==3) {
 			attackRoll= rand.nextInt(50);
 			
 			if(MageAttackRank==1) {
