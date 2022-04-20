@@ -4,21 +4,16 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="rogueMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="rogueMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <ImageView fx:id="rogueMainPic" fitHeight="405.0" fitWidth="610.0" layoutX="-2.0" layoutY="-3.0">
+      <ImageView fx:id="rogueMainPic" fitHeight="416.0" fitWidth="609.0" layoutX="-3.0" layoutY="-8.0">
          <image>
-            <Image url="@../../../../Desktop/chimera_title.jpg" />
+            <Image url="@../../../../../Desktop/chimera_title.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="gameButton" layoutX="282.0" layoutY="180.0" mnemonicParsing="false" onAction="#playGame" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: white;" text="Play">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="creditScene" layoutX="545.0" layoutY="374.0" mnemonicParsing="false" onAction="#openCredits" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: white;" text="Credits" />
+      <Button fx:id="gameButton" layoutX="258.0" layoutY="130.0" mnemonicParsing="false" onAction="#openClassScene" prefHeight="40.0" prefWidth="76.0" style="-fx-background-color: white;" text="Play" />
+      <Button fx:id="creditsButton" layoutX="545.0" layoutY="374.0" mnemonicParsing="false" onAction="#openCredits" style="-fx-background-color: white;" text="Credits" />
    </children>
 </AnchorPane>
