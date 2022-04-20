@@ -26,7 +26,7 @@ public class fightController extends ClassSelectController {
 	int job = 1;
 	String s;
 	
-	Random rand;
+	Random rand = new Random();
 	int attackRoll;
 	int damage;
 	
@@ -53,7 +53,7 @@ public class fightController extends ClassSelectController {
 			if(SamiAttackRank==1) {
 			attackRoll= attackRoll+16;
 			s=String.valueOf(attackRoll);
-			AR.setText(String.valueOf(attackRoll));
+			AR.setText(s);
 			
 			
 			if(attackRoll> 1) {
