@@ -32,6 +32,9 @@ public class fightController extends ClassSelectController implements Initializa
 	int damage;
 	
 	@FXML
+	Label GameOver;
+	
+	@FXML
 	TextField AttackRoll;
 		
 	@FXML
@@ -55,14 +58,13 @@ public class fightController extends ClassSelectController implements Initializa
 	@FXML
 	void Attack(ActionEvent event) throws IOException {
 		
-		// Samurai attack
-		if (job == 1) {
-			attackRoll = rand.nextInt(50);
+		if (!(playerHealth <= 0) && !(enemyHealth <= 0)) {
 			
-			if (SamiAttackRank == 1) {
+			// Samurai attack
+			if (job == 1) {
+				attackRoll = rand.nextInt(50);
 				
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
-				
+				if (SamiAttackRank == 1) {
 					attackRoll = attackRoll + 16;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -75,12 +77,8 @@ public class fightController extends ClassSelectController implements Initializa
 						DamageRoll.setText(String.valueOf(damage));
 					}
 				}
-			}
-				
-			else if (SamiAttackRank == 2) {
-				
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
-				
+					
+				else if (SamiAttackRank == 2) {
 					attackRoll = attackRoll + 21;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -93,11 +91,8 @@ public class fightController extends ClassSelectController implements Initializa
 						DamageRoll.setText(String.valueOf(damage));
 					}
 				}
-			}
-				
-			else if (SamiAttackRank == 3) {
-				
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					
+				else if (SamiAttackRank == 3) {
 					attackRoll = attackRoll + 27;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -111,15 +106,12 @@ public class fightController extends ClassSelectController implements Initializa
 					}
 				}
 			}
-		}
-		
-		
-		//Rigger attack
-		else if (job == 2) {
-			attackRoll = rand.nextInt(50);
 			
-			if (RiggerAttackRank == 1) {
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+			
+			//Rigger attack
+			else if (job == 2) {
+				attackRoll = rand.nextInt(50);
+				if (RiggerAttackRank == 1) {
 					attackRoll = attackRoll + 16;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -132,10 +124,8 @@ public class fightController extends ClassSelectController implements Initializa
 						DamageRoll.setText(String.valueOf(damage));
 					}
 				}
-			}
-				
-			else if (RiggerAttackRank == 2) {
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					
+				else if (RiggerAttackRank == 2) {
 					attackRoll = attackRoll + 21;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -148,10 +138,8 @@ public class fightController extends ClassSelectController implements Initializa
 						DamageRoll.setText(String.valueOf(damage));
 					}
 				}
-			}
-				
-			else if (RiggerAttackRank == 3) {
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					
+				else if (RiggerAttackRank == 3) {
 					attackRoll = attackRoll + 27;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -165,14 +153,13 @@ public class fightController extends ClassSelectController implements Initializa
 					}
 				}
 			}
-		}
-		
-		
-		//mage/psion/psyker attack roll
-		else if (job == 3) {
-			attackRoll= rand.nextInt(50);
-			if (MageAttackRank == 1) {
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+			
+			
+			//mage/psion/psyker attack roll
+			else if (job == 3) {
+				attackRoll= rand.nextInt(50);
+				if (MageAttackRank == 1) {
+					
 					attackRoll = attackRoll + 16;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -184,11 +171,9 @@ public class fightController extends ClassSelectController implements Initializa
 						playerHP.setText(String.valueOf(playerHealth));
 						DamageRoll.setText(String.valueOf(damage));
 					}
-				}
-			} 
-			
-			else if (MageAttackRank == 2) {
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+				} 
+				
+				else if (MageAttackRank == 2) {
 					attackRoll = attackRoll + 21;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -201,11 +186,10 @@ public class fightController extends ClassSelectController implements Initializa
 						DamageRoll.setText(String.valueOf(damage));
 						
 					}
-				}
-			} 
-			
-			else if (MageAttackRank == 3) {
-				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+				} 
+				
+				else if (MageAttackRank == 3) {
+					
 					attackRoll = attackRoll + 27;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -219,22 +203,31 @@ public class fightController extends ClassSelectController implements Initializa
 					}
 				}
 			}
+			
+			if (playerHealth <= 0 || enemyHealth <= 0) {
+				if (playerHealth <= 0) {
+					playerHP.setText("0");
+				} else if (enemyHealth <= 0) {
+					enemyHP.setText("0");
+				}
+				GameOver.setOpacity(1);
+			}
 		}
 	}
 		
 	@FXML
 	void addRank(ActionEvent event) throws IOException {
-		if (SamiAttackRank!=3 && job==1) {
+		if (SamiAttackRank != 3 && job == 1) {
 			SamiAttackRank++;
 			Rank.setText(String.valueOf(SamiAttackRank));
 		}
 		
-		if (RiggerAttackRank!=3 && job==2) {
+		if (RiggerAttackRank != 3 && job == 2) {
 			RiggerAttackRank++;
 			Rank.setText(String.valueOf(RiggerAttackRank));
 		}
 		
-		if (MageAttackRank!=3 && job==3) {
+		if (MageAttackRank != 3 && job == 3) {
 			MageAttackRank++;
 			Rank.setText(String.valueOf(MageAttackRank));
 		}
@@ -243,17 +236,17 @@ public class fightController extends ClassSelectController implements Initializa
 	
 	@FXML
 	void reduceRank(ActionEvent event) throws IOException {
-		if (SamiAttackRank!=1 && job==1) {
+		if (SamiAttackRank != 1 && job == 1) {
 			SamiAttackRank--;
 			Rank.setText(String.valueOf(SamiAttackRank));
 		}
 		
-		if (RiggerAttackRank!=1 && job==2) {
+		if (RiggerAttackRank != 1 && job == 2) {
 			RiggerAttackRank--;
 			Rank.setText(String.valueOf(RiggerAttackRank));
 		}
 		
-		if (MageAttackRank!=1 && job==3) {
+		if (MageAttackRank != 1 && job == 3) {
 			MageAttackRank--;
 			Rank.setText(String.valueOf(MageAttackRank));
 		}
