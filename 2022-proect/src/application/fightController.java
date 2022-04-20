@@ -33,8 +33,8 @@ public class fightController extends ClassSelectController {
 	@FXML
 	TextField AttackRoll;
 		
-		@FXML
-		TextField DamageRoll;
+	@FXML
+	TextField DamageRoll;
 	
 	@FXML
 	Label Rank;
@@ -47,23 +47,25 @@ public class fightController extends ClassSelectController {
 	
 	@FXML
 	void Attack(ActionEvent event) throws IOException {
+		
+		// Samurai attack
 		if(job==1) {
 			attackRoll= rand.nextInt(50);
 			
 			if(SamiAttackRank==1) {
-			attackRoll= attackRoll+16;
-			s=String.valueOf(attackRoll);
-			AR.setText(s);
-			
-			
-			if(attackRoll> 1) {
-				damage = rand.nextInt(50) +1;
-				//adjust hp
-				//s=String.valueOf(damage);
-				DR.setText(String.valueOf(damage));
+				attackRoll= attackRoll+16;
+				s=String.valueOf(attackRoll);
+				AR.setText(s);
 				
 				
-			}
+				if(attackRoll> 1) {
+					damage = rand.nextInt(50) +1;
+					//adjust hp
+					//s=String.valueOf(damage);
+					DR.setText(String.valueOf(damage));
+					
+					
+				}
 			}
 				
 			if(SamiAttackRank==2) {
@@ -75,9 +77,8 @@ public class fightController extends ClassSelectController {
 					//damage
 					s=String.valueOf(damage);
 					DR.setText(String.valueOf(damage));
-					
 				}
-				}
+			}
 				
 			if(SamiAttackRank==3) {
 				attackRoll= attackRoll+27;
@@ -92,11 +93,9 @@ public class fightController extends ClassSelectController {
 					DR.setText(String.valueOf(SamiAttackRank));
 				
 				}
-				}
-			
-			
-			
 			}
+			
+		}
 		
 		
 		//Rigger attack
@@ -104,19 +103,19 @@ public class fightController extends ClassSelectController {
 			attackRoll= rand.nextInt(50);
 			
 			if(RiggerAttackRank==1) {
-			attackRoll= attackRoll+16;
-			s=String.valueOf(attackRoll);
-			AttackRoll.setText(String.valueOf(attackRoll));
-			
-			
-			if(attackRoll> 1) {
-				damage = rand.nextInt(50) +1;
-				//adjust hp
-				s=String.valueOf(damage);
-				DamageRoll.setText(s);
+				attackRoll= attackRoll+16;
+				s=String.valueOf(attackRoll);
+				AttackRoll.setText(String.valueOf(attackRoll));
 				
 				
-			}
+				if(attackRoll> 1) {
+					damage = rand.nextInt(50) +1;
+					//adjust hp
+					s=String.valueOf(damage);
+					DamageRoll.setText(s);
+					
+					
+				}
 			}
 				
 			if(RiggerAttackRank==2) {
@@ -130,7 +129,7 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 					
 				}
-				}
+			}
 				
 			if(RiggerAttackRank==3) {
 				attackRoll= attackRoll+27;
@@ -145,33 +144,29 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 				
 				}
-				}
-			
-			
-			
 			}
+			
+			
+			
+		}
 		
 		
 		
-		//mage/psion attack roll
-		
+		//mage/psion/psyker attack roll
 		if(job==3) {
 			attackRoll= rand.nextInt(50);
-			
 			if(MageAttackRank==1) {
-			attackRoll= attackRoll+16;
-			s=String.valueOf(attackRoll);
-			AttackRoll.setText(String.valueOf(attackRoll));
-			
-			
-			if(attackRoll> 1) {
-				damage = rand.nextInt(50) +1;
-				//adjust hp
-				s=String.valueOf(damage);
-				DamageRoll.setText(s);
+				attackRoll= attackRoll+16;
+				s=String.valueOf(attackRoll);
+				AttackRoll.setText(String.valueOf(attackRoll));
 				
 				
-			}
+				if(attackRoll> 1) {
+					damage = rand.nextInt(50) +1;
+					//adjust hp
+					s=String.valueOf(damage);
+					DamageRoll.setText(s);
+				}
 			}
 				
 			if(MageAttackRank==2) {
@@ -185,7 +180,7 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 					
 				}
-				}
+			}
 				
 			if(MageAttackRank==3) {
 				attackRoll= attackRoll+27;
@@ -200,14 +195,14 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 				
 				}
-				}
-			
-			
-			
 			}
-		
+			
+			
 			
 		}
+		
+			
+	}
 		
 	@FXML
 	void addRank(ActionEvent event) throws IOException {
