@@ -38,7 +38,7 @@ public class ClassSelectController extends Main {
 	@FXML
 	void samiJob(ActionEvent event) throws IOException {
 		 job = 1;
-		 System.out.println("Choosing samurai job");
+		 //System.out.println("Choosing samurai job");
 		 mainPane2 = FXMLLoader.load(getClass().getResource("fight.fxml"));// pane you are GOING TO
          Scene scene = new Scene(mainPane2);// pane you are GOING TO show
          Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
@@ -49,7 +49,7 @@ public class ClassSelectController extends Main {
 	@FXML
 	void RiggerJob(ActionEvent event) throws IOException {
 		 job = 2;
-		 System.out.println("Choosing rigger job");
+		 //System.out.println("Choosing rigger job");
 		 mainPane2 = FXMLLoader.load(getClass().getResource("fight.fxml"));// pane you are GOING TO
          Scene scene = new Scene(mainPane2);// pane you are GOING TO show
          Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
@@ -60,7 +60,7 @@ public class ClassSelectController extends Main {
 	@FXML
 	void MageJob(ActionEvent event) throws IOException {
 		 job = 3;
-		 System.out.println("Choosing mage job");
+		 //System.out.println("Choosing mage job");
 		 mainPane2 = FXMLLoader.load(getClass().getResource("fight.fxml"));// pane you are GOING TO
          Scene scene = new Scene(mainPane2);// pane you are GOING TO show
          Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON

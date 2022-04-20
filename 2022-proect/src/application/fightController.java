@@ -1,11 +1,14 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -13,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class fightController extends ClassSelectController {
+public class fightController extends ClassSelectController implements Initializable{
 	
 	private AnchorPane mainPane2;
 	
@@ -23,7 +26,8 @@ public class fightController extends ClassSelectController {
 	int AC=15;
 	int mana;
 	int st;
-	String s;
+	int playerHealth;
+	int enemyHealth;
 	
 	Random rand = new Random();
 	int attackRoll;
@@ -45,175 +49,194 @@ public class fightController extends ClassSelectController {
 	Label DR;
 	
 	@FXML
+	Label playerHP;
+	
+	@FXML
+	Label enemyHP;
+	
+	@FXML
 	void Attack(ActionEvent event) throws IOException {
 		
 		// Samurai attack
-		if(job==1) {
-			attackRoll= rand.nextInt(50);
+		if (job == 1) {
+			attackRoll = rand.nextInt(50);
 			
-			if(SamiAttackRank==1) {
-				attackRoll= attackRoll+16;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(s);
+			if (SamiAttackRank == 1) {
 				
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
 				
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +1;
-					//adjust hp
-					//s=String.valueOf(damage);
-					DamageRoll.setText(String.valueOf(damage));
+					attackRoll = attackRoll + 16;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
 					
-					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 1;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
 				}
-				System.out.println("Samurai attack rank 1");
 			}
 				
-			else if(SamiAttackRank==2) {
-				attackRoll= attackRoll+21;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +6;
-					//damage
-					s=String.valueOf(damage);
-					DamageRoll.setText(String.valueOf(damage));
+			else if (SamiAttackRank == 2) {
+				
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+				
+					attackRoll = attackRoll + 21;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
+					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 6;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
 				}
-				System.out.println("Samurai attack rank 2");
 			}
 				
-			else if(SamiAttackRank==3) {
-				attackRoll= attackRoll+27;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +11;
-					//adjust hp
-					s=String.valueOf(damage);
-					DamageRoll.setText(String.valueOf(damage));
+			else if (SamiAttackRank == 3) {
 				
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					attackRoll = attackRoll + 27;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
+					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 11;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
 				}
-				System.out.println("Samurai attack rank 3");
 			}
 		}
 		
 		
 		//Rigger attack
-		else if(job==2) {
-			attackRoll= rand.nextInt(50);
+		else if (job == 2) {
+			attackRoll = rand.nextInt(50);
 			
-			if(RiggerAttackRank==1) {
-				attackRoll= attackRoll+16;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				
-				
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +1;
-					//adjust hp
-					s=String.valueOf(damage);
-					DamageRoll.setText(s);
+			if (RiggerAttackRank == 1) {
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					attackRoll = attackRoll + 16;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
 					
-					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 1;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
 				}
-				System.out.println("Rigger attack rank 1");
 			}
 				
-			if(RiggerAttackRank==2) {
-				attackRoll= attackRoll+21;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +6;
-					//adjust hp
-					s=String.valueOf(damage);
-					DamageRoll.setText(s);
+			else if (RiggerAttackRank == 2) {
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					attackRoll = attackRoll + 21;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
 					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 6;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
 				}
-				System.out.println("Rigger attack rank 2");
 			}
 				
-			if(RiggerAttackRank==3) {
-				attackRoll= attackRoll+27;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				
-				
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +11;
-					//adjust hp
-					s=String.valueOf(damage);
-					DamageRoll.setText(s);
-				
+			else if (RiggerAttackRank == 3) {
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					attackRoll = attackRoll + 27;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
+					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 11;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
 				}
-				System.out.println("Rigger attack rank 3");
 			}
 		}
 		
 		
-		
 		//mage/psion/psyker attack roll
-		else if(job==3) {
+		else if (job == 3) {
 			attackRoll= rand.nextInt(50);
-			if(MageAttackRank==1) {
-				attackRoll= attackRoll+16;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				
-				
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +1;
-					//adjust hp
-					s=String.valueOf(damage);
-					DamageRoll.setText(s);
-				}
-				System.out.println("Mage attack rank 1");
-			}
-				
-			if(MageAttackRank==2) {
-				attackRoll= attackRoll+21;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +6;
-					//adjust hp
-					s=String.valueOf(damage);
-					DamageRoll.setText(s);
+			if (MageAttackRank == 1) {
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					attackRoll = attackRoll + 16;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
 					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 1;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
 				}
-				System.out.println("Mage attack rank 2");
 			}
 				
-			if(MageAttackRank==3) {
-				attackRoll= attackRoll+27;
-				s=String.valueOf(attackRoll);
-				AttackRoll.setText(String.valueOf(attackRoll));
-				
-				
-				if(attackRoll> 1) {
-					damage = rand.nextInt(50) +11;
-					//adjust hp
-					s=String.valueOf(damage);
-					DamageRoll.setText(s);
-				
+			else if (MageAttackRank == 2) {
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					attackRoll = attackRoll + 21;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
+					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 6;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+						
+					}
 				}
-				System.out.println("Mage attack rank 3");
+			}
+				
+			else if (MageAttackRank == 3) {
+				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
+					attackRoll = attackRoll + 27;
+					AttackRoll.setText(String.valueOf(attackRoll));
+					enemyHealth = enemyHealth - attackRoll;
+					enemyHP.setText(String.valueOf(enemyHealth));
+					
+					if (attackRoll > 1) {
+						damage = rand.nextInt(50) + 11;
+						playerHealth = playerHealth - damage;
+						playerHP.setText(String.valueOf(playerHealth));
+						DamageRoll.setText(String.valueOf(damage));
+					}
+				}
 			}
 		}
 	}
 		
 	@FXML
 	void addRank(ActionEvent event) throws IOException {
-		if(SamiAttackRank!=3 && job==1) {
+		if (SamiAttackRank!=3 && job==1) {
 			SamiAttackRank++;
 			Rank.setText(String.valueOf(SamiAttackRank));
 		}
 		
-		if(RiggerAttackRank!=3 && job==2) {
+		if (RiggerAttackRank!=3 && job==2) {
 			RiggerAttackRank++;
 			Rank.setText(String.valueOf(RiggerAttackRank));
 		}
 		
-		if(MageAttackRank!=3 && job==3) {
+		if (MageAttackRank!=3 && job==3) {
 			MageAttackRank++;
 			Rank.setText(String.valueOf(MageAttackRank));
 		}
@@ -222,17 +245,17 @@ public class fightController extends ClassSelectController {
 	
 	@FXML
 	void reduceRank(ActionEvent event) throws IOException {
-		if(SamiAttackRank!=1 && job==1) {
+		if (SamiAttackRank!=1 && job==1) {
 			SamiAttackRank--;
 			Rank.setText(String.valueOf(SamiAttackRank));
 		}
 		
-		if(RiggerAttackRank!=1 && job==2) {
+		if (RiggerAttackRank!=1 && job==2) {
 			RiggerAttackRank--;
 			Rank.setText(String.valueOf(RiggerAttackRank));
 		}
 		
-		if(MageAttackRank!=1 && job==3) {
+		if (MageAttackRank!=1 && job==3) {
 			MageAttackRank--;
 			Rank.setText(String.valueOf(MageAttackRank));
 		}
@@ -253,6 +276,12 @@ public class fightController extends ClassSelectController {
 		
 		
 		
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		playerHealth = Integer.parseInt(playerHP.getText());
+		enemyHealth = Integer.parseInt(enemyHP.getText());
 	}
 	
 	
