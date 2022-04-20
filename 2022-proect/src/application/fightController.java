@@ -207,7 +207,9 @@ public class fightController extends ClassSelectController implements Initializa
 			if (playerHealth <= 0 || enemyHealth <= 0) {
 				if (playerHealth <= 0) {
 					playerHP.setText("0");
-				} else if (enemyHealth <= 0) {
+				} 
+				
+				if (enemyHealth <= 0) {
 					enemyHP.setText("0");
 				}
 				GameOver.setOpacity(1);
