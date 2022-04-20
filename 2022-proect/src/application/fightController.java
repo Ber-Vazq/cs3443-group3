@@ -10,15 +10,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class fightController extends ClassSelectController implements Initializable{
-	
-	private AnchorPane mainPane2;
 	
 	int SamiAttackRank=1;
 	int RiggerAttackRank=1;
@@ -187,8 +185,8 @@ public class fightController extends ClassSelectController implements Initializa
 						DamageRoll.setText(String.valueOf(damage));
 					}
 				}
-			}
-				
+			} 
+			
 			else if (MageAttackRank == 2) {
 				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
 					attackRoll = attackRoll + 21;
@@ -204,8 +202,8 @@ public class fightController extends ClassSelectController implements Initializa
 						
 					}
 				}
-			}
-				
+			} 
+			
 			else if (MageAttackRank == 3) {
 				if (!(playerHealth <= 0) || !(enemyHealth <= 0)) {
 					attackRoll = attackRoll + 27;
@@ -264,7 +262,7 @@ public class fightController extends ClassSelectController implements Initializa
 
 	@FXML
 	void ChangeClass(ActionEvent event) throws IOException {
-		 mainPane2 = FXMLLoader.load(getClass().getResource("class.fxml"));// pane you are GOING TO
+		 Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/class.fxml"));// pane you are GOING TO
          Scene scene = new Scene(mainPane2);// pane you are GOING TO show
          Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
          window.setScene(scene);

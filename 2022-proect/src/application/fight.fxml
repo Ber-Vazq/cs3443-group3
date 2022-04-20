@@ -20,7 +20,7 @@
       <TextField fx:id="AttackRoll" layoutX="48.0" layoutY="337.0" />
       <TextField fx:id="DamageRoll" layoutX="365.0" layoutY="337.0" />
       <Button layoutX="246.0" layoutY="58.0" mnemonicParsing="false" onAction="#ChangeClass" text="Change Class" />
-      <Label fx:id="Rank" layoutX="18.0" layoutY="98.0" text="Click Add to udate rank" />
+      <Label fx:id="Rank" layoutX="18.0" layoutY="98.0" text="Click Add to update rank" />
       <Label layoutX="70.0" layoutY="215.0" text="Player Health">
          <font>
             <Font size="18.0" />
