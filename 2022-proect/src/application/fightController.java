@@ -23,7 +23,6 @@ public class fightController extends ClassSelectController {
 	int AC=15;
 	int mana;
 	int st;
-	int job = 1;
 	String s;
 	
 	Random rand = new Random();
@@ -55,51 +54,51 @@ public class fightController extends ClassSelectController {
 			if(SamiAttackRank==1) {
 				attackRoll= attackRoll+16;
 				s=String.valueOf(attackRoll);
-				AR.setText(s);
+				AttackRoll.setText(s);
 				
 				
 				if(attackRoll> 1) {
 					damage = rand.nextInt(50) +1;
 					//adjust hp
 					//s=String.valueOf(damage);
-					DR.setText(String.valueOf(damage));
+					DamageRoll.setText(String.valueOf(damage));
 					
 					
 				}
+				System.out.println("Samurai attack rank 1");
 			}
 				
-			if(SamiAttackRank==2) {
+			else if(SamiAttackRank==2) {
 				attackRoll= attackRoll+21;
 				s=String.valueOf(attackRoll);
-				AR.setText(String.valueOf(attackRoll));
+				AttackRoll.setText(String.valueOf(attackRoll));
 				if(attackRoll> 1) {
 					damage = rand.nextInt(50) +6;
 					//damage
 					s=String.valueOf(damage);
-					DR.setText(String.valueOf(damage));
+					DamageRoll.setText(String.valueOf(damage));
 				}
+				System.out.println("Samurai attack rank 2");
 			}
 				
-			if(SamiAttackRank==3) {
+			else if(SamiAttackRank==3) {
 				attackRoll= attackRoll+27;
 				s=String.valueOf(attackRoll);
 				AttackRoll.setText(String.valueOf(attackRoll));
-				
-				
 				if(attackRoll> 1) {
 					damage = rand.nextInt(50) +11;
 					//adjust hp
 					s=String.valueOf(damage);
-					DR.setText(String.valueOf(SamiAttackRank));
+					DamageRoll.setText(String.valueOf(damage));
 				
 				}
+				System.out.println("Samurai attack rank 3");
 			}
-			
 		}
 		
 		
 		//Rigger attack
-		if(job==2) {
+		else if(job==2) {
 			attackRoll= rand.nextInt(50);
 			
 			if(RiggerAttackRank==1) {
@@ -116,6 +115,7 @@ public class fightController extends ClassSelectController {
 					
 					
 				}
+				System.out.println("Rigger attack rank 1");
 			}
 				
 			if(RiggerAttackRank==2) {
@@ -129,6 +129,7 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 					
 				}
+				System.out.println("Rigger attack rank 2");
 			}
 				
 			if(RiggerAttackRank==3) {
@@ -144,16 +145,14 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 				
 				}
+				System.out.println("Rigger attack rank 3");
 			}
-			
-			
-			
 		}
 		
 		
 		
 		//mage/psion/psyker attack roll
-		if(job==3) {
+		else if(job==3) {
 			attackRoll= rand.nextInt(50);
 			if(MageAttackRank==1) {
 				attackRoll= attackRoll+16;
@@ -167,6 +166,7 @@ public class fightController extends ClassSelectController {
 					s=String.valueOf(damage);
 					DamageRoll.setText(s);
 				}
+				System.out.println("Mage attack rank 1");
 			}
 				
 			if(MageAttackRank==2) {
@@ -180,6 +180,7 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 					
 				}
+				System.out.println("Mage attack rank 2");
 			}
 				
 			if(MageAttackRank==3) {
@@ -195,13 +196,9 @@ public class fightController extends ClassSelectController {
 					DamageRoll.setText(s);
 				
 				}
+				System.out.println("Mage attack rank 3");
 			}
-			
-			
-			
 		}
-		
-			
 	}
 		
 	@FXML
@@ -220,9 +217,6 @@ public class fightController extends ClassSelectController {
 			MageAttackRank++;
 			Rank.setText(String.valueOf(MageAttackRank));
 		}
-		
-		
-		
 	}
 
 	
@@ -242,9 +236,6 @@ public class fightController extends ClassSelectController {
 			MageAttackRank--;
 			Rank.setText(String.valueOf(MageAttackRank));
 		}
-		
-		
-		
 	}
 
 
@@ -255,8 +246,6 @@ public class fightController extends ClassSelectController {
          Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
          window.setScene(scene);
          window.show();
-		
-		
 	}
 	
 	void ShowRank(ActionEvent event) throws IOException {
