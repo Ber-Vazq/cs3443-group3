@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 public class fightController extends ClassSelectController implements Initializable{
 	
 	int SamiAttackRank=1;
-	int RiggerAttackRank=1;
+	int TechnopathAttackRank=1;
 	int MageAttackRank=1;
 	int AC=15;
 	int mana;
@@ -111,7 +111,7 @@ public class fightController extends ClassSelectController implements Initializa
 			//Rigger attack
 			else if (job == 2) {
 				attackRoll = rand.nextInt(50);
-				if (RiggerAttackRank == 1) {
+				if (TechnopathAttackRank == 1) {
 					attackRoll = attackRoll + 16;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -125,7 +125,7 @@ public class fightController extends ClassSelectController implements Initializa
 					}
 				}
 					
-				else if (RiggerAttackRank == 2) {
+				else if (TechnopathAttackRank == 2) {
 					attackRoll = attackRoll + 21;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -139,7 +139,7 @@ public class fightController extends ClassSelectController implements Initializa
 					}
 				}
 					
-				else if (RiggerAttackRank == 3) {
+				else if (TechnopathAttackRank == 3) {
 					attackRoll = attackRoll + 27;
 					AttackRoll.setText(String.valueOf(attackRoll));
 					enemyHealth = enemyHealth - attackRoll;
@@ -224,9 +224,9 @@ public class fightController extends ClassSelectController implements Initializa
 			Rank.setText(String.valueOf(SamiAttackRank));
 		}
 		
-		if (RiggerAttackRank != 3 && job == 2) {
-			RiggerAttackRank++;
-			Rank.setText(String.valueOf(RiggerAttackRank));
+		if (TechnopathAttackRank != 3 && job == 2) {
+			TechnopathAttackRank++;
+			Rank.setText(String.valueOf(TechnopathAttackRank));
 		}
 		
 		if (MageAttackRank != 3 && job == 3) {
@@ -243,9 +243,9 @@ public class fightController extends ClassSelectController implements Initializa
 			Rank.setText(String.valueOf(SamiAttackRank));
 		}
 		
-		if (RiggerAttackRank != 1 && job == 2) {
-			RiggerAttackRank--;
-			Rank.setText(String.valueOf(RiggerAttackRank));
+		if (TechnopathAttackRank != 1 && job == 2) {
+			TechnopathAttackRank--;
+			Rank.setText(String.valueOf(TechnopathAttackRank));
 		}
 		
 		if (MageAttackRank != 1 && job == 3) {

@@ -30,7 +30,7 @@ public class ClassSelectController extends Main {
 	}
 
 	@FXML
-	void RiggerJob(ActionEvent event) throws IOException {
+	void TechnopathJob(ActionEvent event) throws IOException {
 		 job = 2;
 		 Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/fight.fxml"));// pane you are GOING TO
          Scene scene = new Scene(mainPane2);// pane you are GOING TO show

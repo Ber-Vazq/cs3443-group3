@@ -9,7 +9,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClassSelectController">
    <children>
       <Button layoutX="54.0" layoutY="344.0" mnemonicParsing="false" onAction="#samiJob" text="Street Samurai test" />
-      <Button layoutX="252.0" layoutY="344.0" mnemonicParsing="false" onAction="#RiggerJob" text="Rigger Test" />
+      <Button layoutX="252.0" layoutY="344.0" mnemonicParsing="false" onAction="#TechnopathJob" text="Technopath Test" />
       <Button layoutX="427.0" layoutY="344.0" mnemonicParsing="false" onAction="#MageJob" text="Mage Test" />
    </children>
 </AnchorPane>
