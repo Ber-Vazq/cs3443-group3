@@ -5,12 +5,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane fx:id="creditsAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreditsController">
    <children>
       <ImageView fx:id="creditsPic" fitHeight="333.0" fitWidth="507.0" layoutX="45.0" layoutY="5.0">
          <image>
-            <Image url="@../../../../../../Desktop/Screen%20Shot%202022-04-20%20at%208.08.09%20PM.png" />
+            <Image url="@../../assets/credits.png" />
          </image>
       </ImageView>
       <Button fx:id="backButton" layoutX="525.0" layoutY="361.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
