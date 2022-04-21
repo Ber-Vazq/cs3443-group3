@@ -9,7 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="429.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fightController">
+<AnchorPane prefHeight="429.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.fightController">
    <children>
       <AnchorPane layoutX="-126.0" layoutY="-42.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="48.0" layoutY="58.0" mnemonicParsing="false" onAction="#addRank" text="AddRank" />
