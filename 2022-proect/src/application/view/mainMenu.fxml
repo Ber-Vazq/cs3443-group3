@@ -14,6 +14,6 @@
       </ImageView>
       <Button fx:id="playButton" layoutX="154.0" layoutY="255.0" mnemonicParsing="false" onAction="#openClassScreen" text="Play" />
       <Button fx:id="quitButton" layoutX="438.0" layoutY="255.0" mnemonicParsing="false" onAction="#quitGame" text="Quit" />
-      <Button fx:id="creditsButton" layoutX="543.0" layoutY="373.0" mnemonicParsing="false" onAction="#openCredits" text="Credits" />
+      <Button fx:id="creditsButton" layoutX="529.0" layoutY="360.0" mnemonicParsing="false" onAction="#openCredits" text="Credits" />
    </children>
 </AnchorPane>
