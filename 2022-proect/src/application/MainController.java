@@ -50,5 +50,5 @@ public class MainController {
     void quitGame(ActionEvent event) {
     	Platform.exit();
     }
-    
+   
 }
