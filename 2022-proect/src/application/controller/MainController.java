@@ -32,7 +32,7 @@ public class MainController {
 
     @FXML
     void openClassScreen(ActionEvent event) throws IOException {
-        mainMenuAnchor = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/class.fxml"));
+        mainMenuAnchor = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/level1.fxml"));
         Scene scene = new Scene(mainMenuAnchor);//window im going to 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();//window im in
         window.setScene(scene);
