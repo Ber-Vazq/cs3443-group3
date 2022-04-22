@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class LevelController extends ClassSelectController{
+public class LevelController3 extends LevelController{
 	
 	@FXML
 	Label enemy1HP;
@@ -41,12 +41,14 @@ public class LevelController extends ClassSelectController{
 	
 	@FXML
 	Button nextLevelButton;
-
 	
-	int playerHealth = 150;
-	int enemy1Health = 50;
-	int enemy2Health = 75;
-	int enemy3Health = 50;
+	@FXML
+	Label level;
+	
+	int playerHealth = 15;
+	int enemy1Health = 60;
+	int enemy2Health = 90;
+	int enemy3Health = 60;
 	
 	Random rand = new Random();
 	int attackRoll;
@@ -68,7 +70,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy1Health = enemy1Health - attackRoll;
-				enemy1HP.setText(String.valueOf(enemy1Health) + "/50");
+				enemy1HP.setText(String.valueOf(enemy1Health) + "/60");
 				//System.out.println(attackRoll);
 				
 				if (enemy1Health != 0) {
@@ -98,7 +100,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy1Health = enemy1Health - attackRoll;
-				enemy1HP.setText(String.valueOf(enemy1Health) + "/50");
+				enemy1HP.setText(String.valueOf(enemy1Health) + "/60");
 				//System.out.println(attackRoll);
 				
 				if (enemy1Health != 0) {
@@ -128,7 +130,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy1Health = enemy1Health - attackRoll;
-				enemy1HP.setText(String.valueOf(enemy1Health) + "/50");
+				enemy1HP.setText(String.valueOf(enemy1Health) + "/60");
 				//System.out.println(attackRoll);
 				
 				if (enemy1Health != 0) {
@@ -181,13 +183,13 @@ public class LevelController extends ClassSelectController{
 			if (job == 1) {
 				//System.out.println("samurai job");
 				
-				attackRoll = rand.nextInt(50);
+				attackRoll = rand.nextInt(4);
 				damageDoneToPlayer1 = rand.nextInt(10);
 				damageDoneToPlayer2 = rand.nextInt(5);
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy2Health = enemy2Health - attackRoll;
-				enemy2HP.setText(String.valueOf(enemy2Health) + "/75");
+				enemy2HP.setText(String.valueOf(enemy2Health) + "/90");
 				//System.out.println("damage: " + attackRoll + "\n" + "enemy 2 HP: " + enemy2Health);
 				
 				if (enemy1Health != 0) {
@@ -217,7 +219,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy2Health = enemy2Health - attackRoll;
-				enemy2HP.setText(String.valueOf(enemy2Health) + "/75");
+				enemy2HP.setText(String.valueOf(enemy2Health) + "/90");
 				//System.out.println("damage: " + attackRoll + "\n" + "enemy 2 HP: " + enemy2Health);
 				
 				if (enemy1Health != 0) {
@@ -247,7 +249,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy2Health = enemy2Health - attackRoll;
-				enemy2HP.setText(String.valueOf(enemy2Health) + "/75");
+				enemy2HP.setText(String.valueOf(enemy2Health) + "/90");
 				//System.out.println("damage: " + attackRoll + "\n" + "enemy 2 HP: " + enemy2Health);
 				
 				if (enemy1Health != 0) {
@@ -303,7 +305,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy3Health = enemy3Health - attackRoll;
-				enemy3HP.setText(String.valueOf(enemy3Health) + "/50");
+				enemy3HP.setText(String.valueOf(enemy3Health) + "/60");
 				//System.out.println("damage: " + attackRoll + "\n" + "enemy 3 HP: " + enemy3Health);
 				
 				if (enemy1Health != 0) {
@@ -333,7 +335,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy3Health = enemy3Health - attackRoll;
-				enemy3HP.setText(String.valueOf(enemy3Health) + "/50");
+				enemy3HP.setText(String.valueOf(enemy3Health) + "/60");
 				//System.out.println("damage: " + attackRoll + "\n" + "enemy 3 HP: " + enemy3Health);
 				
 				if (enemy1Health != 0) {
@@ -363,7 +365,7 @@ public class LevelController extends ClassSelectController{
 				damageDoneToPlayer3 = rand.nextInt(10);
 				
 				enemy3Health = enemy3Health - attackRoll;
-				enemy3HP.setText(String.valueOf(enemy3Health) + "/50");
+				enemy3HP.setText(String.valueOf(enemy3Health) + "/60");
 				//System.out.println("damage: " + attackRoll + "\n" + "enemy 3 HP: " + enemy3Health);
 				
 				if (enemy1Health != 0) {
@@ -393,7 +395,6 @@ public class LevelController extends ClassSelectController{
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
 				enemy1Attack.setDisable(true);
-				
 			} 
 			
 			if (enemy3Health <= 0) {
@@ -419,7 +420,7 @@ public class LevelController extends ClassSelectController{
 	}
 	
 	public void goNextLevel(ActionEvent event) throws IOException {
-		Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/level2.fxml"));// pane you are GOING TO
+		Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/level4.fxml"));// pane you are GOING TO
         Scene scene = new Scene(mainPane2);// pane you are GOING TO show
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
         window.setScene(scene);

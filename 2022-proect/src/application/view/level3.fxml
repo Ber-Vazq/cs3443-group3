@@ -52,6 +52,7 @@
       <Label layoutX="435.0" layoutY="330.0" text="Enemy 3" textFill="WHITE" />
       <Label fx:id="enemy3HP" layoutX="434.0" layoutY="349.0" text="50/50" textFill="WHITE" />
       <Button fx:id="nextLevelButton" disable="true" layoutX="240.0" layoutY="354.0" mnemonicParsing="false" onAction="#goNextLevel" text="Go to next level" visible="false" />
+      <Label fx:id="level" layoutX="240.0" layoutY="32.0" text="Level 3" textFill="WHITE" />
       <Label fx:id="gameOver" layoutX="212.0" layoutY="226.0" prefHeight="51.0" prefWidth="155.0" text="Game Over" textFill="#ee0606" underline="true" visible="false">
          <font>
             <Font size="30.0" />
