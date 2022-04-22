@@ -57,5 +57,6 @@
             <Font size="30.0" />
          </font>
       </Label>
+      <Label fx:id="stage" layoutX="240.0" layoutY="32.0" text="Level 1" textFill="WHITE" />
    </children>
 </AnchorPane>
