@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="429.0" prefWidth="579.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LevelController">
+   <children>
+      <Label fx:id="playerHP" layoutX="84.0" layoutY="287.0" text="150/150" textFill="WHITE" />
+      <Button fx:id="enemy1Attack" layoutX="57.0" layoutY="313.0" mnemonicParsing="false" onAction="#enemy1Press" text="Attack Enemy 1" />
+      <Button layoutX="392.0" layoutY="49.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="173.0">
+         <graphic>
+            <ImageView fitHeight="117.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../assets/enemies/enemy3Idle.gif" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="298.0" layoutY="55.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="119.0">
+         <graphic>
+            <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../assets/enemies/eneny1Idle.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="387.0" layoutY="164.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="66.0">
+         <graphic>
+            <ImageView fitHeight="117.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/enemies/enemy2Idle.gif" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="150.0" fitWidth="122.0" layoutX="54.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assets/player/player.gif" />
+         </image>
+      </ImageView>
+      <Button layoutX="503.0" layoutY="390.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" />
+      <Button fx:id="enemy2Attack" layoutX="57.0" layoutY="345.0" mnemonicParsing="false" onAction="#enemy2Press" text="Attack Enemy 2" />
+      <Button fx:id="enemy3Attack" layoutX="57.0" layoutY="378.0" mnemonicParsing="false" onAction="#enemy3Press" text="Attack Enemy 3" />
+      <Label layoutX="349.0" layoutY="23.0" text="Enemy 1" textFill="WHITE" />
+      <Label fx:id="enemy1HP" layoutX="349.0" layoutY="38.0" text="50/50" textFill="WHITE" />
+      <Label fx:id="enemy2HP" layoutX="457.0" layoutY="32.0" text="75/75" textFill="WHITE" />
+      <Label layoutX="456.0" layoutY="15.0" text="Enemy 2" textFill="WHITE" />
+      <Label layoutX="435.0" layoutY="330.0" text="Enemy 3" textFill="WHITE" />
+      <Label fx:id="enemy3HP" layoutX="434.0" layoutY="349.0" text="50/50" textFill="WHITE" />
+      <Button fx:id="nextLevelButton" disable="true" layoutX="240.0" layoutY="354.0" mnemonicParsing="false" onAction="#goNextLevel" text="Go to next level" visible="false" />
+   </children>
+</AnchorPane>

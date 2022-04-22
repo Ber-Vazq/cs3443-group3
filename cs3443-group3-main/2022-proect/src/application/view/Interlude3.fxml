@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea editable="false" layoutX="67.0" layoutY="27.0" prefHeight="200.0" prefWidth="441.0" text="As you take a moment to salvage what you can from the battle, you have an epiphany. You have done exactly what you were sent here to do, there is no way these monsters could be completely contained, some will slip through the cracks, not without having to use the kind of fire power that would have massive PR damage. Whoever sent you on this mission knew that things would shake out like this, they wanted this “Project Chimera” to become public knowledge, leading to the arrest of major share holders CEOs, high ranking staff, you were an unwitting pawn in a massive power play!!!" wrapText="true" />
+      <Label layoutX="264.0" layoutY="264.0" text="You Find" />
+      <Button layoutX="52.0" layoutY="308.0" mnemonicParsing="false" text="A better weapon,: +attack Rank" />
+      <Button layoutX="327.0" layoutY="308.0" mnemonicParsing="false" text="Some better armor plates: Damage Reduction" />
+   </children>
+</AnchorPane>
