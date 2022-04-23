@@ -49,8 +49,8 @@
       <Label fx:id="enemy1HP" layoutX="349.0" layoutY="38.0" text="50/50" textFill="WHITE" />
       <Label fx:id="enemy2HP" layoutX="457.0" layoutY="32.0" text="75/75" textFill="WHITE" />
       <Label fx:id="enemy2Name" layoutX="456.0" layoutY="15.0" text="Enemy 2" textFill="WHITE" />
-      <Label fx:id="enemy3Name" layoutX="435.0" layoutY="330.0" text="Enemy 3" textFill="WHITE" />
-      <Label fx:id="enemy3HP" layoutX="434.0" layoutY="349.0" text="50/50" textFill="WHITE" />
+      <Label fx:id="enemy3Name" layoutX="396.0" layoutY="307.0" text="Enemy 3" textFill="WHITE" />
+      <Label fx:id="enemy3HP" layoutX="395.0" layoutY="326.0" text="50/50" textFill="WHITE" />
       <Button fx:id="nextLevelButton" disable="true" layoutX="240.0" layoutY="354.0" mnemonicParsing="false" onAction="#goNextLevel" text="Go to next level" visible="false" />
       <Label fx:id="gameOver" layoutX="212.0" layoutY="226.0" prefHeight="51.0" prefWidth="155.0" text="Game Over" textFill="#ee0606" underline="true" visible="false">
          <font>
