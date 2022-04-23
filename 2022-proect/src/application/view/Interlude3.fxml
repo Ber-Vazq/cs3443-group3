@@ -15,8 +15,8 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button layoutX="125.0" layoutY="292.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="109.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="370.0" layoutY="292.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="109.0" text="Better armor, increased health" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="125.0" layoutY="292.0" mnemonicParsing="false" onAction="#weaponIncrease" prefHeight="58.0" prefWidth="109.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="370.0" layoutY="292.0" mnemonicParsing="false" onAction="#armorIncrease" prefHeight="58.0" prefWidth="109.0" text="Better armor, increased health" textAlignment="CENTER" wrapText="true" />
       <Label layoutX="38.0" layoutY="41.0" prefHeight="192.0" prefWidth="524.0" text="As you take a moment to salvage what you can from the battle, you have an epiphany. You have done exactly what you were sent here to do, there is no way these monsters could be completely contained, some will slip through the cracks, not without having to use the kind of fire power that would have massive PR damage. Whoever sent you on this mission knew that things would shake out like this, they wanted this “Project Chimera” to become public knowledge, leading to the arrest of major share holders, CEOs, high ranking staff, you were an unwitting pawn in a massive power play!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="15.0" />
