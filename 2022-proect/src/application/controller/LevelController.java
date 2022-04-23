@@ -80,9 +80,6 @@ public class LevelController implements Initializable{
 	int damageDoneToPlayer3;
 	static int HPChoice = 0;
 	static int ATKChoice = 0;
-	int a; 
-	int b;
-	int c;
 	
 	public void enemy1Press(ActionEvent event) {
 		
@@ -377,15 +374,9 @@ public class LevelController implements Initializable{
 		
 		playerMaxHP = 500 + level * 20 + HPChoice * 10;
 		
-		a = rand.nextInt(10);
-		System.out.print(a);
-		System.out.print(a);
-		System.out.print(a);
-		b = rand.nextInt(10);
-		c = rand.nextInt(10);
-		enemy1Health = 50 + 2 * level + a * level; //used to update health of monster across levels
-		enemy2Health = 75 + 5 * level + b * level; //^
-		enemy3Health = 50 + 2 * level + c * level; //^^
+		enemy1Health = 50 + 2 * level + rand.nextInt(10) * level; //used to update health of monster across levels
+		enemy2Health = 75 + 5 * level + rand.nextInt(10) * level; //^
+		enemy3Health = 50 + 2 * level + rand.nextInt(10) * level; //^^
 		tankMaxHP = enemy2Health; //may need to be static
 		dpsMaxHP = enemy1Health; //^
 		dps2MaxHP = enemy3Health;
