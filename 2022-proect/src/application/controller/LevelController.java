@@ -1,19 +1,23 @@
 package application.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class LevelController extends ClassSelectController{
+public class LevelController implements Initializable{
 	
 	@FXML
 	Label enemy1HP;
@@ -44,18 +48,28 @@ public class LevelController extends ClassSelectController{
 	
 	@FXML
 	Button nextLevelButton;
+	
+	@FXML
+	Button menuButton;
+	
+	@FXML
+	ImageView enemy1;
+	
+	@FXML
+	ImageView enemy2;
+	
+	@FXML
+	ImageView enemy3;
 
-	
-	static int playerHealth = 150; // tracks player health across levels
-	static int level = 0; // tracks level progress
-	int enemy1Health = 50 + 5*level; //used to update health of monster across levels
-	int enemy2Health = 75 + 10*level; //^
-	int enemy3Health = 50 + 5*level; //^^
-	int tankMaxHP = 75 + 10*level; //may need to be static
-	int dpsMaxHP = 50 + 5*level; //^
-	static int playerMaxHP = 150;
-	
 	Random rand = new Random();
+	static int playerHealth = 500; // tracks player health across levels
+	static int level = 0; // tracks level progress
+	int enemy1Health; //used to update health of monster across levels
+	int enemy2Health; //^
+	int enemy3Health; //^^
+	int tankMaxHP; //may need to be static
+	int dpsMaxHP; //^
+	static int playerMaxHP = 500;
 	int attackRoll;
 	int damageDoneToPlayer1;
 	int damageDoneToPlayer2;
@@ -66,106 +80,39 @@ public class LevelController extends ClassSelectController{
 	public void enemy1Press(ActionEvent event) {
 		
 		if (!(playerHealth <= 0)) {
-			stage.setText("Level " + String.valueOf(level + 1));
-			playerMaxHP = 150 + level * 20 + HPChoice * 10;
-			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-//			System.out.print(level);
-			if (job == 1) {
-				//System.out.println("samurai job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-//				System.out.print(enemy1Health);
-				enemy1Health = enemy1Health + 5*level - attackRoll;
-				enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
-			}
+			playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
 			
-			if (job == 2) {
-				//System.out.println("technopath job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy1Health = enemy1Health + 5*level - attackRoll;
-				enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
-			}
+			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
+			System.out.println(attackRoll);
+			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
+			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
+			enemy1Health = enemy1Health - attackRoll;
+			enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
 			
-			if (job == 3) {
-				//System.out.println("mage job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy1Health = enemy1Health + 5*level - attackRoll;
-				enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
+			if (enemy1Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer1;
+				playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
+			} 
+			if (enemy2Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer2;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
+			if (enemy3Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer3;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
+			}
+				
+			
 			
 		}
 		
 		if (playerHealth <= 0 || enemy1Health <= 0) {
 			if (playerHealth <= 0) {
 				playerHP.setText("Dead");
+				playerHealth = playerMaxHP;
 				gameOver.setVisible(true);
+				menuButton.setVisible(true);
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
 				enemy1Attack.setDisable(true);
@@ -174,6 +121,7 @@ public class LevelController extends ClassSelectController{
 			if (enemy1Health <= 0) {
 				enemy1Attack.setDisable(true);
 				enemy1Attack.setText("Enemy 1 Dead");
+				enemy1.setOpacity(0.25);
 				enemy1HP.setText("Dead");
 			}
 		}
@@ -181,107 +129,38 @@ public class LevelController extends ClassSelectController{
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
-			level++;
+			//level++;
 			playerHealth += (level + 1) * 20;
-//			System.out.print(level);
 		}
 		
 	}
-	
+
 	public void enemy2Press(ActionEvent event) {
 		if (!(playerHealth <= 0)) {
-			playerMaxHP = 150 + level * 20 + HPChoice * 10;
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-//			System.out.print(level);
-			if (job == 1) {
-				//System.out.println("samurai job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy2Health = enemy2Health + 10*level - attackRoll;
-				enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
-			}
+			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
+			System.out.println(attackRoll);
+			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
+			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
 			
-			if (job == 2) {
-				//System.out.println("technopath job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy2Health = enemy2Health + 10*level - attackRoll;
-				enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
-			}
+			enemy2Health = enemy2Health - attackRoll;
+			enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
 			
-			if (job == 3) {
-				//System.out.println("mage job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy2Health = enemy2Health + 10*level - attackRoll;
-				enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
+			if (enemy1Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer1;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
+			} 
+			if (enemy2Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer2;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
+			if (enemy3Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer3;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
+			}
+				
+			
 			
 		}
 		
@@ -289,6 +168,8 @@ public class LevelController extends ClassSelectController{
 			if (playerHealth <= 0) {
 				playerHP.setText("Dead");
 				gameOver.setVisible(true);
+				playerHealth = playerMaxHP;
+				menuButton.setVisible(true);
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
 				enemy1Attack.setDisable(true);
@@ -297,6 +178,7 @@ public class LevelController extends ClassSelectController{
 			if (enemy2Health <= 0) {
 				enemy2Attack.setDisable(true);
 				enemy2Attack.setText("Enemy 1 Dead");
+				enemy2.setOpacity(0.25);
 				enemy2HP.setText("Dead");
 			}
 		}
@@ -304,105 +186,34 @@ public class LevelController extends ClassSelectController{
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
-			level++;
+			//level++;
 			playerHealth += (level + 1) * 20;
-//			System.out.print(level);
 		}
 	}
 	
 	public void enemy3Press(ActionEvent event) {
 		if (!(playerHealth <= 0)) {
-			playerMaxHP = 150 + level * 20 + HPChoice * 10;
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-//			System.out.print(level);
-			if (job == 1) {
-				//System.out.println("samurai job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy3Health = enemy3Health + 5*level - attackRoll;
-				enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dpsMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
-			}
+			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
+			System.out.println(attackRoll);
+			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
+			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
 			
-			if (job == 2) {
-				//System.out.println("technopath job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy3Health = enemy3Health + 5*level - attackRoll;
-				enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dpsMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
-			}
+			enemy3Health = enemy3Health - attackRoll;
+			enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dpsMaxHP));
 			
-			if (job == 3) {
-				//System.out.println("mage job");
-				
-				attackRoll = rand.nextInt(50 + 3*ATKChoice);
-				damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-				damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-				damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
-				
-				enemy3Health = enemy3Health + 5*level - attackRoll;
-				enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dpsMaxHP));
-				//System.out.println(attackRoll);
-				
-				if (enemy1Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer1;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 1 damaging player for " + damageDoneToPlayer1);
-				} 
-				if (enemy2Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer2;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 2 damaging player for " + damageDoneToPlayer2);
-				}
-				if (enemy3Health != 0) {
-					playerHealth = playerHealth - damageDoneToPlayer3;
-					playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-					//System.out.println("enemy 3 damaging player for " + damageDoneToPlayer3);
-				}
-				
+			if (enemy1Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer1;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
+			} 
+			if (enemy2Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer2;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
+			}
+			if (enemy3Health != 0) {
+				playerHealth = playerHealth - damageDoneToPlayer3;
+				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
 			
 		}
@@ -411,6 +222,8 @@ public class LevelController extends ClassSelectController{
 			if (playerHealth <= 0) {
 				playerHP.setText("Dead");
 				gameOver.setVisible(true);
+				playerHealth = playerMaxHP;
+				menuButton.setVisible(true);
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
 				enemy1Attack.setDisable(true);
@@ -419,6 +232,7 @@ public class LevelController extends ClassSelectController{
 			if (enemy3Health <= 0) {
 				enemy3Attack.setDisable(true);
 				enemy3Attack.setText("Enemy 1 Dead");
+				enemy3.setOpacity(0.25);
 				enemy3HP.setText("Dead");
 			}
 		}
@@ -426,11 +240,12 @@ public class LevelController extends ClassSelectController{
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
-			level++;
+			//level++;
 			playerHealth += (level + 1) * 20;
-//			System.out.print(level);
 		}
 	}
+	
+	
 	
 	
 	public void goToMenu(ActionEvent event) throws IOException {
@@ -442,10 +257,53 @@ public class LevelController extends ClassSelectController{
 	}
 	
 	public void goNextLevel(ActionEvent event) throws IOException {
-		Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/level1.fxml"));// pane you are GOING TO
-        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
-        window.setScene(scene);
-        window.show();
+		if (level == 0) {
+			Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/Interlude1.fxml"));// pane you are GOING TO
+	        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
+	        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
+	        window.setScene(scene);
+	        window.show();
+		} else if (level == 1) {
+			Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/Interlude2.fxml"));// pane you are GOING TO
+	        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
+	        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
+	        window.setScene(scene);
+	        window.show();
+		} else if (level == 2) {
+			Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/Interlude3.fxml"));// pane you are GOING TO
+	        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
+	        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
+	        window.setScene(scene);
+	        window.show();
+		} else if (level == 3) {
+			Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/credits.fxml"));// pane you are GOING TO
+	        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
+	        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
+	        window.setScene(scene);
+	        window.show();
+		}
 	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		playerMaxHP = 500 + level * 20 + HPChoice * 10;
+		
+		enemy1Health = 50 + 2 * level; //used to update health of monster across levels
+		enemy2Health = 75 + 5 * level; //^
+		enemy3Health = 50 + 2 * level; //^^
+		tankMaxHP = 75 + 5 * level; //may need to be static
+		dpsMaxHP = 50 + 2 * level; //^
+		
+		stage.setText("Level " + String.valueOf(level + 1));
+		playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
+		enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
+		enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
+		enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dpsMaxHP));
+		
+		
+		
+	}
+
+	
 }

@@ -12,26 +12,26 @@
    <children>
       <Label fx:id="playerHP" layoutX="84.0" layoutY="287.0" text="150/150" textFill="WHITE" />
       <Button fx:id="enemy1Attack" layoutX="57.0" layoutY="313.0" mnemonicParsing="false" onAction="#enemy1Press" text="Attack Enemy 1" />
-      <Button layoutX="392.0" layoutY="49.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="173.0">
+      <Button layoutX="392.0" layoutY="49.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="173.0" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="117.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fx:id="enemy2" fitHeight="117.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../assets/enemies/enemy3Idle.gif" />
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="298.0" layoutY="55.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="119.0">
+      <Button layoutX="298.0" layoutY="55.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="119.0" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fx:id="enemy1" fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../assets/enemies/eneny1Idle.gif" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="387.0" layoutY="164.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="66.0">
+      <Button layoutX="387.0" layoutY="164.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="66.0" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="117.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="enemy3" fitHeight="117.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets/enemies/enemy2Idle.gif" />
                </image>
@@ -42,7 +42,7 @@
             <Image url="@../../assets/player/player.gif" />
          </image>
       </ImageView>
-      <Button layoutX="503.0" layoutY="390.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" />
+      <Button fx:id="menuButton" layoutX="503.0" layoutY="390.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" visible="false" />
       <Button fx:id="enemy2Attack" layoutX="57.0" layoutY="345.0" mnemonicParsing="false" onAction="#enemy2Press" text="Attack Enemy 2" />
       <Button fx:id="enemy3Attack" layoutX="57.0" layoutY="378.0" mnemonicParsing="false" onAction="#enemy3Press" text="Attack Enemy 3" />
       <Label layoutX="349.0" layoutY="23.0" text="Enemy 1" textFill="WHITE" />
@@ -57,6 +57,9 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="stage" layoutX="240.0" layoutY="32.0" text="Level 1" textFill="WHITE" />
+      <Label fx:id="stage" layoutX="14.0" layoutY="10.0" text="Level 1" textFill="WHITE" underline="true">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
    </children>
 </AnchorPane>
