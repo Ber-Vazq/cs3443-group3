@@ -284,7 +284,7 @@ public class LevelController implements Initializable{
 	
 	
 	/*
-	 * this ones easy, its the go home button
+	 * the button to go back to the main menu
 	 */
 	
 	public void goToMenu(ActionEvent event) throws IOException {
@@ -296,10 +296,9 @@ public class LevelController implements Initializable{
         window.show();
 	}
 	/*
-	 * oh what a coincidence this one is also easy, its the next level button, though it does control it for each interlude and level
+	 * this is the next level button, it controls it for all interludes and levels
 	 * 
-	 * if you check we set up an if else-if ladder in order to check which level you are currently on and using that determining what level
-	 * you are going to. neat little bit of coding tbh
+	 * we set up an if else-if ladder in order to check which level you are currently on and using that determining what level you are going to.
 	 */
 	
 	public void goNextLevel(ActionEvent event) throws IOException {
@@ -333,11 +332,11 @@ public class LevelController implements Initializable{
 	}
 	
 	/*
-	 * initialize is pretty neat i'd say
+	 * initialize does the following
 	 * 
 	 * it first checks which level you are one and sets the enemy according to that level and loads them into view
-	 * doing so through a series of switch cases, in order to be able to get everything in a semblance of randomness so that the playthroughs
-	 * aren't boring.
+	 * doing so through a series of switch cases, in order to be able to get everything in a semblance of randomness so that subsequent
+	 * playthroughs aren't boring.
 	 * 
 	 * it does this first and then determines the health of each enemy by using this equation for the enemies 
 	 * enemy1Health = 50 + 2 * level + rand.nextInt(10) * level

@@ -15,7 +15,7 @@ public class ClassSelectController extends Main {
 
 	public static int job;
 	/*
-	 * okay so the sami job is the samurai class, techno is the technopath, and mage is mage
+	 * the sami job is the samurai class, techno is the technopath, and mage is mage
 	 * each class has its own upsides and everything but we mainly just use this controller for the choosing and then moving on
 	 * as you can see each one does the same job of moving on to level 1
 	 */

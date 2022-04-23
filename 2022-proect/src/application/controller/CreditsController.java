@@ -13,9 +13,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class CreditsController {
-/*
- * yeah this is just a scene to credit all of us for our main contributions to the project, and then to go back to the main menu.
- */
+	/*
+	 * credits screen
+	 * this is the scene where we give credit to each member for their largest contribution to the project
+	 * 
+	 * includes a back to menu button
+	 */
     @FXML
     private Button backButton;
 

@@ -10,7 +10,7 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application {
 	@Override
 	/*
-	 * this one's simple, just opening up the app to the main menu
+	 * the way to open the app
 	 */
 	public void start(Stage primaryStage) {
 		try {
