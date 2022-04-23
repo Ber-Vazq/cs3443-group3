@@ -125,7 +125,9 @@ public class LevelController implements Initializable{
 		if (playerHealth <= 0 || enemy1Health <= 0) {
 			if (playerHealth <= 0) {
 				playerHP.setText("Dead");
-				playerHealth = 300;
+				if (enemy1Health > 0 || enemy2Health > 0 || enemy3Health > 0) {
+					playerHealth = 300; // resets player hp
+				}
 				gameOver.setVisible(true);
 				menuButton.setVisible(true);
 				enemy3Attack.setDisable(true);
@@ -185,7 +187,9 @@ public class LevelController implements Initializable{
 			if (playerHealth <= 0) {
 				playerHP.setText("Dead");
 				gameOver.setVisible(true);
-				playerHealth = 300;
+				if (enemy1Health > 0 || enemy2Health > 0 || enemy3Health > 0) {
+					playerHealth = 300; // resets player hp
+				}
 				menuButton.setVisible(true);
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
@@ -241,7 +245,9 @@ public class LevelController implements Initializable{
 			if (playerHealth <= 0) { // if player dead
 				playerHP.setText("Dead"); // sets hp bar to dead
 				gameOver.setVisible(true); // shows game over message
-				playerHealth = 300; // resets player hp
+				if (enemy1Health > 0 || enemy2Health > 0 || enemy3Health > 0) {
+					playerHealth = 300; // resets player hp
+				}
 				menuButton.setVisible(true); // shows menu button
 				enemy3Attack.setDisable(true); // disables attack button
 				enemy2Attack.setDisable(true); // ^
