@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -9,13 +10,33 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="creditsAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreditsController">
+<AnchorPane fx:id="creditsAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreditsController">
    <children>
-      <ImageView fx:id="creditsPic" fitHeight="333.0" fitWidth="507.0" layoutX="45.0" layoutY="5.0">
-         <image>
-            <Image url="@../../assets/credits.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="backButton" layoutX="525.0" layoutY="361.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
+      <Button fx:id="backButton" layoutX="527.0" layoutY="344.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
+      <Label layoutX="26.0" layoutY="36.0" text="Bernardo Vazquez De La Cruz - Application Design" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="80.0" text="Clyde Harris - Fight Programming" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="126.0" text="Josh Navarro - Level Programming" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="173.0" text="Nicholas Breach - Art and Interaction" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="219.0" text="Tyler Jobe - Level Programming" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
