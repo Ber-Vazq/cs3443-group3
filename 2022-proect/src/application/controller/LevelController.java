@@ -131,6 +131,7 @@ public class LevelController implements Initializable{
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
 				enemy1Attack.setDisable(true);
+				level = 0;
 			} 
 			
 			if (enemy1Health <= 0) {
@@ -186,6 +187,7 @@ public class LevelController implements Initializable{
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
 				enemy1Attack.setDisable(true);
+				level = 0;
 			} 
 			
 			if (enemy2Health <= 0) {
@@ -238,6 +240,7 @@ public class LevelController implements Initializable{
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
 				enemy1Attack.setDisable(true);
+				level = 0;
 			} 
 			
 			if (enemy3Health <= 0) {
@@ -286,6 +289,7 @@ public class LevelController implements Initializable{
 	        window.setScene(scene);
 	        window.show();
 		} else if (level == 3) {
+			playerHealth = playerMaxHP;
 			Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/credits.fxml"));// pane you are GOING TO
 	        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
 	        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
@@ -428,7 +432,7 @@ public class LevelController implements Initializable{
 		dps2MaxHP = enemy3Health;
 		
 		stage.setText("Level " + String.valueOf(level + 1));
-		playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
+		playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
 		enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(enemy1Health));
 		enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(enemy2Health));
 		enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(enemy3Health));
