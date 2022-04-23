@@ -129,7 +129,7 @@ public class LevelController implements Initializable{
 			}
 		}
 		
-		else if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
+		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
@@ -184,7 +184,7 @@ public class LevelController implements Initializable{
 			}
 		}
 		
-		else if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
+		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
@@ -236,7 +236,7 @@ public class LevelController implements Initializable{
 			}
 		}
 		
-		else if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
+		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
