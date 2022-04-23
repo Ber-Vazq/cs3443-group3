@@ -9,6 +9,9 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	@Override
+	/*
+	 * this one's simple, just opening up the app to the main menu
+	 */
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/mainMenu.fxml"));

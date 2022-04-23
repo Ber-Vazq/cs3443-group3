@@ -29,7 +29,16 @@ public class MainController {
 
     @FXML
     private ImageView titleGif;
-
+    
+    /*
+     * we got three buttons here.
+     * 
+     * open class which starts the game
+     * 
+     * open credits which opens the credits scene
+     * 
+     * and quit which exits the game. using a function i found in the documentation.
+     */
     @FXML
     void openClassScreen(ActionEvent event) throws IOException {
         mainMenuAnchor = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/level1.fxml"));

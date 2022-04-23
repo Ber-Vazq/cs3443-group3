@@ -21,6 +21,9 @@ public class Interlude2Controller extends LevelController{
 	
 	@FXML
 	Label stage;
+	/*
+	 * more of the same, its the same thing as interlude1 just yknow, its now interlude2
+	 */
 	
 	public void weaponIncrease(ActionEvent event) throws IOException {
 		ATKChoice++;

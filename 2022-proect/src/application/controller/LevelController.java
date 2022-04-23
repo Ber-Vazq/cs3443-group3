@@ -92,7 +92,16 @@ public class LevelController implements Initializable{
 	String enemy1ButtonName;
 	String enemy2ButtonName;
 	String enemy3ButtonName;
-	
+	/*
+	 * okay so this and any other enemyPress button events are doing the same thing
+	 * 
+	 * what that thing is i will explain now
+	 * 
+	 * basically its simulating the attack using mainly RNG based off of base player and enemy damage scaled by a 2*level multiplier, ergo if you're on level three
+	 * and you chose weapon attack all three times then you're going to have a x6 multiplier to your attack
+	 * the enemies were hardcoded just for our ease tbh but its also for balancing purposes. mainly so you don't end up at level four with 3 DD's and get ganked 
+	 * immediately.
+	 */
 	public void enemy1Press(ActionEvent event) {
 		
 		if (!(playerHealth <= 0)) {
@@ -274,7 +283,9 @@ public class LevelController implements Initializable{
 	}
 	
 	
-	
+	/*
+	 * this ones easy, its the go home button
+	 */
 	
 	public void goToMenu(ActionEvent event) throws IOException {
 		playerHealth = 300;
@@ -284,6 +295,12 @@ public class LevelController implements Initializable{
         window.setScene(scene);
         window.show();
 	}
+	/*
+	 * oh what a coincidence this one is also easy, its the next level button, though it does control it for each interlude and level
+	 * 
+	 * if you check we set up an if else-if ladder in order to check which level you are currently on and using that determining what level
+	 * you are going to. neat little bit of coding tbh
+	 */
 	
 	public void goNextLevel(ActionEvent event) throws IOException {
 		if (level == 0) {
@@ -314,6 +331,26 @@ public class LevelController implements Initializable{
 	        window.show();
 		}
 	}
+	
+	/*
+	 * initialize is pretty neat i'd say
+	 * 
+	 * it first checks which level you are one and sets the enemy according to that level and loads them into view
+	 * doing so through a series of switch cases, in order to be able to get everything in a semblance of randomness so that the playthroughs
+	 * aren't boring.
+	 * 
+	 * it does this first and then determines the health of each enemy by using this equation for the enemies 
+	 * enemy1Health = 50 + 2 * level + rand.nextInt(10) * level
+	 * enemy2Health = 75 + 5 * level + rand.nextInt(10) * level
+	 * 
+	 * with one enemy always being a bit stronger than the other two in terms of health.
+	 * 
+	 * it also does the same with the player though the equation is a bit different
+	 * playerMaxHP = 300 + level * 20 + HPChoice * 10;
+	 * 
+	 * it then sets the enemies health according to the role they play either beind a tank or a damage dealer.
+	 * then it sets everything into the corresponding text fields and makes it look pretty.
+	 */
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
