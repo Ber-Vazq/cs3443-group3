@@ -144,6 +144,9 @@ public class LevelController implements Initializable{
 		
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
+			if (level == 3) {
+				nextLevelButton.setText("Obliterate yourself");
+			}
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
 		}
@@ -200,6 +203,9 @@ public class LevelController implements Initializable{
 		
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
+			if (level == 3) {
+				nextLevelButton.setText("Obliterate yourself");
+			}
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
 		}
@@ -253,6 +259,9 @@ public class LevelController implements Initializable{
 		
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
+			if (level == 3) {
+				nextLevelButton.setText("Obliterate yourself");
+			}
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
 		}

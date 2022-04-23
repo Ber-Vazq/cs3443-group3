@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Interlude2Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Interlude2Controller">
    <children>
       <Label layoutX="243.0" layoutY="265.0" text="Choose a path" textFill="WHITE" underline="true">
          <font>
@@ -48,9 +48,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="264.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="274.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="294.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="304.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="enemy1Name" layoutX="45.0" layoutY="530.0" text="Choose a path" textFill="WHITE">
          <font>
             <Font size="18.0" />

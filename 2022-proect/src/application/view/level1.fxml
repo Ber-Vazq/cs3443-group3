@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="429.0" prefWidth="579.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LevelController">
+<AnchorPane prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LevelController">
    <children>
       <Label fx:id="playerHP" layoutX="84.0" layoutY="287.0" text="150/150" textFill="WHITE" />
       <Button fx:id="enemy1Attack" layoutX="57.0" layoutY="313.0" mnemonicParsing="false" onAction="#enemy1Press" text="Attack Enemy 1" />

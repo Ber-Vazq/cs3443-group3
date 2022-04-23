@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Interlude1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Interlude1Controller">
    <children>
       <Label layoutX="243.0" layoutY="264.0" text="Choose a path" textFill="WHITE" underline="true">
          <font>
@@ -28,9 +28,9 @@
       <Label fx:id="enemy1HP" layoutX="178.0" layoutY="499.0" text="Label" />
       <Label fx:id="enemy2HP" layoutX="188.0" layoutY="509.0" text="Label" />
       <Label fx:id="enemy3HP" layoutX="198.0" layoutY="519.0" text="Label" />
-      <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="258.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="268.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="278.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="268.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="278.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="288.0" layoutY="556.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="enemy1Name" layoutX="72.0" layoutY="462.0" text="Label" />
       <Label fx:id="enemy2Name" layoutX="82.0" layoutY="472.0" text="Label" />
       <Label fx:id="enemy3Name" layoutX="92.0" layoutY="482.0" text="Label" />
