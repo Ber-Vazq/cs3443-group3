@@ -144,6 +144,9 @@ public class LevelController implements Initializable{
 		
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
+			if (level == 3) {
+				nextLevelButton.setText("Obliterate yourself");
+			}
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
 		}
@@ -200,6 +203,9 @@ public class LevelController implements Initializable{
 		
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
+			if (level == 3) {
+				nextLevelButton.setText("Obliterate yourself");
+			}
 			nextLevelButton.setVisible(true);
 			playerHealth += (level + 1) * 20;
 		}
@@ -252,9 +258,18 @@ public class LevelController implements Initializable{
 		}
 		//checks if all enemies are dead
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
+<<<<<<< HEAD
 			nextLevelButton.setDisable(false); //enables next level button
 			nextLevelButton.setVisible(true); // shows next level button
 			playerHealth += (level + 1) * 20; //heals player
+=======
+			nextLevelButton.setDisable(false);
+			if (level == 3) {
+				nextLevelButton.setText("Obliterate yourself");
+			}
+			nextLevelButton.setVisible(true);
+			playerHealth += (level + 1) * 20;
+>>>>>>> branch 'main' of https://github.com/Ber-Vazq/cs3443-group3
 		}
 	}
 	
