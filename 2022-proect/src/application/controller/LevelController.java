@@ -69,6 +69,7 @@ public class LevelController implements Initializable{
 	int enemy3Health; //^^
 	int tankMaxHP; //may need to be static
 	int dpsMaxHP; //^
+	int dps2MaxHP;
 	static int playerMaxHP = 500;
 	int attackRoll;
 	int damageDoneToPlayer1;
@@ -76,6 +77,9 @@ public class LevelController implements Initializable{
 	int damageDoneToPlayer3;
 	static int HPChoice = 0;
 	static int ATKChoice = 0;
+	int a; 
+	int b;
+	int c;
 	
 	public void enemy1Press(ActionEvent event) {
 		
@@ -201,7 +205,7 @@ public class LevelController implements Initializable{
 			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
 			
 			enemy3Health = enemy3Health - attackRoll;
-			enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dpsMaxHP));
+			enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dps2MaxHP));
 			
 			if (enemy1Health != 0) {
 				playerHealth = playerHealth - damageDoneToPlayer1;
@@ -289,17 +293,24 @@ public class LevelController implements Initializable{
 		
 		playerMaxHP = 500 + level * 20 + HPChoice * 10;
 		
-		enemy1Health = 50 + 2 * level; //used to update health of monster across levels
-		enemy2Health = 75 + 5 * level; //^
-		enemy3Health = 50 + 2 * level; //^^
-		tankMaxHP = 75 + 5 * level; //may need to be static
-		dpsMaxHP = 50 + 2 * level; //^
+		a = rand.nextInt(10);
+		System.out.print(a);
+		System.out.print(a);
+		System.out.print(a);
+		b = rand.nextInt(10);
+		c = rand.nextInt(10);
+		enemy1Health = 50 + 2 * level + a * level; //used to update health of monster across levels
+		enemy2Health = 75 + 5 * level + b * level; //^
+		enemy3Health = 50 + 2 * level + c * level; //^^
+		tankMaxHP = enemy2Health; //may need to be static
+		dpsMaxHP = enemy1Health; //^
+		dps2MaxHP = enemy3Health;
 		
 		stage.setText("Level " + String.valueOf(level + 1));
 		playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-		enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
-		enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
-		enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dpsMaxHP));
+		enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(enemy1Health));
+		enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(enemy2Health));
+		enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(enemy3Health));
 		
 		
 		
