@@ -74,7 +74,7 @@ public class LevelController implements Initializable{
 	Random rand = new Random();
 	Random enemyRandom = new Random();
 	int enemyRandomNum;
-	static int playerHealth = 500; // tracks player health across levels
+	static int playerHealth = 300; // tracks player health across levels
 	static int level = 0; // tracks level progress
 	int enemy1Health; //used to update health of monster across levels
 	int enemy2Health; //^
@@ -431,7 +431,7 @@ public class LevelController implements Initializable{
 		enemy2Attack.setText("Attack " + enemy2ButtonName);
 		enemy3Attack.setText("Attack " + enemy3ButtonName);
 		
-		playerMaxHP = 500 + level * 20 + HPChoice * 10;
+		playerMaxHP = 300 + level * 20 + HPChoice * 10;
 		
 		enemy1Health = 50 + 2 * level + rand.nextInt(10) * level; //used to update health of monster across levels
 		enemy2Health = 75 + 5 * level + rand.nextInt(10) * level; //^
