@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -62,6 +63,8 @@ public class LevelController implements Initializable{
 	ImageView enemy3;
 
 	Random rand = new Random();
+	Random enemyRandom = new Random();
+	int enemyRandomNum;
 	static int playerHealth = 500; // tracks player health across levels
 	static int level = 0; // tracks level progress
 	int enemy1Health; //used to update health of monster across levels
@@ -290,6 +293,87 @@ public class LevelController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		enemyRandomNum = enemyRandom.nextInt(6 - 1 + 1) + 1;
+		switch(enemyRandomNum) {
+			case 1:
+				Image image = new Image("./assets/enemies/eneny1Idle.gif");
+				enemy1.setImage(image);
+				break;
+			case 2:
+				Image image2 = new Image("./assets/enemies/enemy2Idle.gif");
+				enemy1.setImage(image2);
+				break;
+			case 3:
+				Image image3 = new Image("./assets/enemies/enemy3Idle.gif");
+				enemy1.setImage(image3);
+				break;
+			case 4:
+				Image image4 = new Image("./assets/enemies/enemy4Idle.gif");
+				enemy1.setImage(image4);
+				break;
+			case 5:
+				Image image5 = new Image("./assets/enemies/enemy5Idle.gif");
+				enemy1.setImage(image5);
+				break;
+			default:
+				Image image6 = new Image("./assets/enemies/enemy6Idle.gif");
+				enemy1.setImage(image6);
+		}	
+		
+		enemyRandomNum = enemyRandom.nextInt(6 - 1 + 1) + 1;
+		switch(enemyRandomNum) {
+			case 1:
+				Image image = new Image("./assets/enemies/eneny1Idle.gif");
+				enemy2.setImage(image);
+				break;
+			case 2:
+				Image image2 = new Image("./assets/enemies/enemy2Idle.gif");
+				enemy2.setImage(image2);
+				break;
+			case 3:
+				Image image3 = new Image("./assets/enemies/enemy3Idle.gif");
+				enemy2.setImage(image3);
+				break;
+			case 4:
+				Image image4 = new Image("./assets/enemies/enemy4Idle.gif");
+				enemy2.setImage(image4);
+				break;
+			case 5:
+				Image image5 = new Image("./assets/enemies/enemy5Idle.gif");
+				enemy2.setImage(image5);
+				break;
+			default:
+				Image image6 = new Image("./assets/enemies/enemy6Idle.gif");
+				enemy2.setImage(image6);
+		}
+		
+		enemyRandomNum = enemyRandom.nextInt(6 - 1 + 1) + 1;
+		switch(enemyRandomNum) {
+			case 1:
+				Image image = new Image("./assets/enemies/eneny1Idle.gif");
+				enemy3.setImage(image);
+				break;
+			case 2:
+				Image image2 = new Image("./assets/enemies/enemy2Idle.gif");
+				enemy3.setImage(image2);
+				break;
+			case 3:
+				Image image3 = new Image("./assets/enemies/enemy3Idle.gif");
+				enemy3.setImage(image3);
+				break;
+			case 4:
+				Image image4 = new Image("./assets/enemies/enemy4Idle.gif");
+				enemy3.setImage(image4);
+				break;
+			case 5:
+				Image image5 = new Image("./assets/enemies/enemy5Idle.gif");
+				enemy3.setImage(image5);
+				break;
+			default:
+				Image image6 = new Image("./assets/enemies/enemy6Idle.gif");
+				enemy3.setImage(image6);
+		}
 		
 		playerMaxHP = 500 + level * 20 + HPChoice * 10;
 		

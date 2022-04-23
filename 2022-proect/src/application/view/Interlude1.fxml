@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -27,5 +28,8 @@
       <Label fx:id="enemy1HP" layoutX="178.0" layoutY="499.0" text="Label" />
       <Label fx:id="enemy2HP" layoutX="188.0" layoutY="509.0" text="Label" />
       <Label fx:id="enemy3HP" layoutX="198.0" layoutY="519.0" text="Label" />
+      <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="258.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="268.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="278.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

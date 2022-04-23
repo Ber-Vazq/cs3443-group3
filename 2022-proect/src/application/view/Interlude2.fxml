@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -47,5 +48,8 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="264.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="274.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
