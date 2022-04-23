@@ -87,7 +87,6 @@ public class LevelController implements Initializable{
 			playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
 			
 			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
-			System.out.println(attackRoll);
 			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
 			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
@@ -133,7 +132,6 @@ public class LevelController implements Initializable{
 		else if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
-			//level++;
 			playerHealth += (level + 1) * 20;
 		}
 		
@@ -143,7 +141,6 @@ public class LevelController implements Initializable{
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
-			System.out.println(attackRoll);
 			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
 			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
@@ -190,7 +187,6 @@ public class LevelController implements Initializable{
 		else if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
-			//level++;
 			playerHealth += (level + 1) * 20;
 		}
 	}
@@ -199,7 +195,6 @@ public class LevelController implements Initializable{
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
-			System.out.println(attackRoll);
 			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
 			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
@@ -244,7 +239,6 @@ public class LevelController implements Initializable{
 		else if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0) {
 			nextLevelButton.setDisable(false);
 			nextLevelButton.setVisible(true);
-			//level++;
 			playerHealth += (level + 1) * 20;
 		}
 	}
