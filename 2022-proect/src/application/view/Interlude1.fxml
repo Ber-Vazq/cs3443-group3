@@ -31,5 +31,11 @@
       <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="258.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="268.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="278.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="enemy1Name" layoutX="72.0" layoutY="462.0" text="Label" />
+      <Label fx:id="enemy2Name" layoutX="82.0" layoutY="472.0" text="Label" />
+      <Label fx:id="enemy3Name" layoutX="92.0" layoutY="482.0" text="Label" />
+      <Button fx:id="enemy1Attack" layoutX="268.0" layoutY="435.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="enemy2Attack" layoutX="278.0" layoutY="445.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="enemy3Attack" layoutX="288.0" layoutY="455.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>

@@ -45,11 +45,11 @@
       <Button fx:id="menuButton" layoutX="503.0" layoutY="390.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" visible="false" />
       <Button fx:id="enemy2Attack" layoutX="57.0" layoutY="345.0" mnemonicParsing="false" onAction="#enemy2Press" text="Attack Enemy 2" />
       <Button fx:id="enemy3Attack" layoutX="57.0" layoutY="378.0" mnemonicParsing="false" onAction="#enemy3Press" text="Attack Enemy 3" />
-      <Label layoutX="349.0" layoutY="23.0" text="Enemy 1" textFill="WHITE" />
+      <Label fx:id="enemy1Name" layoutX="349.0" layoutY="23.0" text="Enemy 1" textFill="WHITE" />
       <Label fx:id="enemy1HP" layoutX="349.0" layoutY="38.0" text="50/50" textFill="WHITE" />
       <Label fx:id="enemy2HP" layoutX="457.0" layoutY="32.0" text="75/75" textFill="WHITE" />
-      <Label layoutX="456.0" layoutY="15.0" text="Enemy 2" textFill="WHITE" />
-      <Label layoutX="435.0" layoutY="330.0" text="Enemy 3" textFill="WHITE" />
+      <Label fx:id="enemy2Name" layoutX="456.0" layoutY="15.0" text="Enemy 2" textFill="WHITE" />
+      <Label fx:id="enemy3Name" layoutX="435.0" layoutY="330.0" text="Enemy 3" textFill="WHITE" />
       <Label fx:id="enemy3HP" layoutX="434.0" layoutY="349.0" text="50/50" textFill="WHITE" />
       <Button fx:id="nextLevelButton" disable="true" layoutX="240.0" layoutY="354.0" mnemonicParsing="false" onAction="#goNextLevel" text="Go to next level" visible="false" />
       <Label fx:id="gameOver" layoutX="212.0" layoutY="226.0" prefHeight="51.0" prefWidth="155.0" text="Game Over" textFill="#ee0606" underline="true" visible="false">

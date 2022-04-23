@@ -51,5 +51,23 @@
       <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="264.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="274.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="enemy1Name" layoutX="45.0" layoutY="530.0" text="Choose a path" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="enemy2Name" layoutX="55.0" layoutY="540.0" text="Choose a path" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="enemy3Name" layoutX="65.0" layoutY="550.0" text="Choose a path" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="enemy1Attack" layoutX="284.0" layoutY="442.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="enemy2Attack" layoutX="294.0" layoutY="452.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="enemy3Attack" layoutX="304.0" layoutY="462.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>
