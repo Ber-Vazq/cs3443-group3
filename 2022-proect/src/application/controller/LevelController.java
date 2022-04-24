@@ -102,7 +102,6 @@ public class LevelController implements Initializable{
 	String enemy1ButtonName;
 	String enemy2ButtonName;
 	String enemy3ButtonName;
-	String test;
 	/*
 	 * Every enemyPress function does the same thing
 	 * it initiates the attack using RNG based off of base player and enemy damage which is then scaled by a 2*level multiplier, 

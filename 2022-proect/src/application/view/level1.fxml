@@ -49,7 +49,14 @@
             <Image url="@../../assets/player/player.gif" />
          </image>
       </ImageView>
-      <Button fx:id="menuButton" layoutX="503.0" layoutY="390.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" visible="false" />
+      <Button fx:id="menuButton" layoutX="492.0" layoutY="361.0" mnemonicParsing="false" onAction="#goToMenu" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets.buttons/menuButtonImage.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Button fx:id="enemy2Attack" layoutX="57.0" layoutY="345.0" mnemonicParsing="false" onAction="#enemy2Press" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fx:id="enemy2AttackImage" fitHeight="21.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
