@@ -84,21 +84,21 @@ public class LevelController implements Initializable{
 	Random rand = new Random();
 	Random enemyRandom = new Random();
 	int enemyRandomNum;
-	static int playerHealth = 200; // tracks player health across levels
+	static int playerHealth = 300; // tracks player health across levels
 	static int level = 0; // tracks level progress
-	int enemy1Health; //used to update health of monster across levels
+	int enemy1Health; //monster health
 	int enemy2Health; //^
 	int enemy3Health; //^^
-	int tankMaxHP; //may need to be static
+	int tankMaxHP; //monster max hp
 	int dpsMaxHP; //^
-	int dps2MaxHP;
-	static int playerMaxHP = 200;
-	int attackRoll;
-	int damageDoneToPlayer1;
-	int damageDoneToPlayer2;
-	int damageDoneToPlayer3;
-	static int HPChoice = 0;
-	static int ATKChoice = 0;
+	int dps2MaxHP; //^^
+	static int playerMaxHP = 300; // used to track player max hp
+	int attackRoll; //player damage
+	int damageDoneToPlayer1; //monster damage
+	int damageDoneToPlayer2; //^
+	int damageDoneToPlayer3; //^^
+	static int HPChoice = 0; // used to track player choice
+	static int ATKChoice = 0; //^
 	String enemy1ButtonName;
 	String enemy2ButtonName;
 	String enemy3ButtonName;
@@ -106,7 +106,8 @@ public class LevelController implements Initializable{
 	/*
 	 * Every enemyPress function does the same thing
 	 * it initiates the attack using RNG based off of base player and enemy damage which is then scaled by a 2*level multiplier, 
-	 * ergo if you're on level three and you chose weapon attack all three times then you're going to have a x6 multiplier to your attack
+	 * ergo if you're on level three and you chose weapon attack all three times then you're going to have a x15 multiplier to your max attack
+	 * and a base +6 bonus to attack at level 3
 	 * 
 	 * it also checks if the level is over and adds to your health based off of the following formula
 	 * 	playerHealth += (level + 1) * 20
@@ -144,9 +145,6 @@ public class LevelController implements Initializable{
 		if (playerHealth <= 0 || enemy1Health <= 0) {
 			if (playerHealth <= 0) {
 				playerHP.setText("Dead");
-				/*if (enemy1Health > 0 || enemy2Health > 0 || enemy3Health > 0) {
-					playerHealth = 300; // resets player hp
-				}*/
 				gameOver.setVisible(true);
 				menuButton.setVisible(true);
 				enemy3Attack.setDisable(true);
@@ -207,9 +205,6 @@ public class LevelController implements Initializable{
 			if (playerHealth <= 0) {
 				playerHP.setText("Dead");
 				gameOver.setVisible(true);
-				/*if (enemy1Health > 0 || enemy2Health > 0 || enemy3Health > 0) {
-					playerHealth = 300; // resets player hp
-				}*/
 				menuButton.setVisible(true);
 				enemy3Attack.setDisable(true);
 				enemy2Attack.setDisable(true);
@@ -266,9 +261,6 @@ public class LevelController implements Initializable{
 			if (playerHealth <= 0) { // if player dead
 				playerHP.setText("Dead"); // sets hp bar to dead
 				gameOver.setVisible(true); // shows game over message
-				/*if (enemy1Health > 0 || enemy2Health > 0 || enemy3Health > 0) {
-					playerHealth = 300; // resets player hp
-				}*/
 				menuButton.setVisible(true); // shows menu button
 				enemy3Attack.setDisable(true); // disables attack button
 				enemy2Attack.setDisable(true); // ^
@@ -360,7 +352,7 @@ public class LevelController implements Initializable{
 	 * it also does the same with the player though the equation is a bit different
 	 * playerMaxHP = 300 + level * 20 + HPChoice * 10;
 	 * 
-	 * it then sets the enemies health according to the role they play either beind a tank or a damage dealer.
+	 * it then sets the enemies health according to the role they play either a tank or a damage dealer.
 	 * then it sets everything into the corresponding text fields.
 	 */
 
@@ -520,18 +512,14 @@ public class LevelController implements Initializable{
 				enemy3Name.setText("Thresher");
 		}
 		
-		//enemy1Attack.setText("Attack " + enemy1ButtonName);
-		//enemy2Attack.setText("Attack " + enemy2ButtonName);
-		//enemy3Attack.setText("Attack " + enemy3ButtonName);
-		
-		playerMaxHP = 200 + level * 5 + HPChoice * 10;
+		playerMaxHP = 300 + level * 5 + HPChoice * 10;
 		
 		enemy1Health = 50 + 2 * level + rand.nextInt(10) * level; //used to update health of monster across levels
 		enemy2Health = 75 + 5 * level + rand.nextInt(10) * level; //^
 		enemy3Health = 50 + 2 * level + rand.nextInt(10) * level; //^^
 		tankMaxHP = enemy2Health; // set max health value
 		dpsMaxHP = enemy1Health; //^
-		dps2MaxHP = enemy3Health;
+		dps2MaxHP = enemy3Health; //^^
 		
 		stage.setText("Level " + String.valueOf(level + 1));
 		playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
