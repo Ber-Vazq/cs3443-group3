@@ -1,1 +1,32 @@
-Yo this is for our project
+This is the Chimera game project
+
+TO RUN:
+	There should only be a need to clone the repository and go through the standard steps to run a javafx application.
+	For the sake of clarity I will detail those steps below:
+		1. Right click on the name of the project
+		2. Go to Run As and click on Run Configurations
+		3. Once at that menu maneuver to the Arguments tab
+		4. In the VM arguments section copy and paste the following line
+			--module-path C:path to your version of OpenJFX\javafx SDK version here\lib --add-modules javafx.controls,javafx.fxml
+			For Mac it should be the same command in the VM Argument field simply without the C:
+		5. Then UNSELECT the FIRST checkbox underneath the VM Arguments section(for clarity it is underneath this step)
+			"Use the -XstartOnFirstThread argument when launching with SWT"
+		6. From there just click apply and you should be able to run the program with no issues.
+
+Made by Group 3 otherwise known as Mad Science
+
+Group Members are as follows(in no particular order):
+	Bernardo Vazquez
+	Tyler Jobe
+	Josh Navarro
+	Clyde Harris
+	Nicholas Breach
+
+This is our attempt at a text-based pseudo roguelike game focused around dystopian elements(akin to Shadowrun, CyberPunk and the derivatives).
+
+KNOWN BUGS:
+	If using version 8 of java our menu gif will not be gif just a still image, as of now no other bugs reported
+
+There is no login info, you just press play
+
+Personally(Bernardo here) I used java15 and SceneBuilder 17.0 according to my download, the only known issue with any other version of Java is in the known bugs area
