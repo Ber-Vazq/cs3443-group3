@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Interlude1Controller">
+   <children>
+      <Label layoutX="243.0" layoutY="264.0" text="Choose a path" textFill="WHITE" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="weapon" layoutX="107.0" layoutY="308.0" mnemonicParsing="false" onAction="#weaponIncrease" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Label layoutX="52.0" layoutY="42.0" prefHeight="235.0" prefWidth="496.0" text="As you take a moment to salvage what you can from the battle, your thoughts go back to how you got into this mess. It was supposed to be a simple infiltration job, disable the security, sneak past the guards, and snatch any files or prototypes you could get your hands on. You should have known something was too good to be true, but you couldn't turn down the cash at the time. Things only seemed more suspicious as you made your way through the facility, the security layout made little sense, it was not until you were face to face with those monsters that you realized it was meant to keep things in, not out." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="armor" layoutX="368.0" layoutY="308.0" mnemonicParsing="false" onAction="#armorIncrease" prefHeight="55.0" prefWidth="129.0" text="Better armor, increased health" textAlignment="CENTER" wrapText="true" />
+      <Label fx:id="stage" layoutX="158.0" layoutY="479.0" text="Label" />
+      <Label fx:id="playerHP" layoutX="168.0" layoutY="489.0" text="Label" />
+      <Label fx:id="enemy1HP" layoutX="178.0" layoutY="499.0" text="Label" />
+      <Label fx:id="enemy2HP" layoutX="188.0" layoutY="509.0" text="Label" />
+      <Label fx:id="enemy3HP" layoutX="198.0" layoutY="519.0" text="Label" />
+      <ImageView fx:id="enemy1" fitHeight="150.0" fitWidth="200.0" layoutX="268.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy2" fitHeight="150.0" fitWidth="200.0" layoutX="278.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy3" fitHeight="150.0" fitWidth="200.0" layoutX="288.0" layoutY="556.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="enemy1Name" layoutX="72.0" layoutY="462.0" text="Label" />
+      <Label fx:id="enemy2Name" layoutX="82.0" layoutY="472.0" text="Label" />
+      <Label fx:id="enemy3Name" layoutX="92.0" layoutY="482.0" text="Label" />
+      <Button fx:id="enemy1Attack" layoutX="268.0" layoutY="435.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="enemy2Attack" layoutX="278.0" layoutY="445.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="enemy3Attack" layoutX="288.0" layoutY="455.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <ImageView fx:id="enemy1AttackImage" fitHeight="150.0" fitWidth="200.0" layoutX="460.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy2AttackImage" fitHeight="150.0" fitWidth="200.0" layoutX="470.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy3AttackImage" fitHeight="150.0" fitWidth="200.0" layoutX="480.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
