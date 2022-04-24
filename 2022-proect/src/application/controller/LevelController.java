@@ -93,14 +93,13 @@ public class LevelController implements Initializable{
 	String enemy2ButtonName;
 	String enemy3ButtonName;
 	/*
-	 * okay so this and any other enemyPress button events are doing the same thing
+	 * Every enemyPress function does the same thing
+	 * it initiates the attack using RNG based off of base player and enemy damage which is then scaled by a 2*level multiplier, 
+	 * ergo if you're on level three and you chose weapon attack all three times then you're going to have a x6 multiplier to your attack
 	 * 
-	 * what that thing is i will explain now
+	 * it also checks if the level is over and adds to your health based off of the following formula
+	 * 	playerHealth += (level + 1) * 20
 	 * 
-	 * basically its simulating the attack using mainly RNG based off of base player and enemy damage scaled by a 2*level multiplier, ergo if you're on level three
-	 * and you chose weapon attack all three times then you're going to have a x6 multiplier to your attack
-	 * the enemies were hardcoded just for our ease tbh but its also for balancing purposes. mainly so you don't end up at level four with 3 DD's and get ganked 
-	 * immediately.
 	 */
 	public void enemy1Press(ActionEvent event) {
 		
@@ -284,7 +283,7 @@ public class LevelController implements Initializable{
 	
 	
 	/*
-	 * this ones easy, its the go home button
+	 * the button to go back to the main menu
 	 */
 	
 	public void goToMenu(ActionEvent event) throws IOException {
@@ -296,10 +295,9 @@ public class LevelController implements Initializable{
         window.show();
 	}
 	/*
-	 * oh what a coincidence this one is also easy, its the next level button, though it does control it for each interlude and level
+	 * this is the next level button, it controls it for all interludes and levels
 	 * 
-	 * if you check we set up an if else-if ladder in order to check which level you are currently on and using that determining what level
-	 * you are going to. neat little bit of coding tbh
+	 * There is an if else-if ladder in order to check which level is loaded and then using that determining what level is being loaded.
 	 */
 	
 	public void goNextLevel(ActionEvent event) throws IOException {
@@ -333,11 +331,11 @@ public class LevelController implements Initializable{
 	}
 	
 	/*
-	 * initialize is pretty neat i'd say
+	 * initialize does the following
 	 * 
-	 * it first checks which level you are one and sets the enemy according to that level and loads them into view
-	 * doing so through a series of switch cases, in order to be able to get everything in a semblance of randomness so that the playthroughs
-	 * aren't boring.
+	 * it first checks which level the player is on and sets the enemy according to that level and loads them into view
+	 * doing so through a series of switch cases, in order to be able to get everything in a semblance of randomness so that subsequent
+	 * playthroughs aren't boring.
 	 * 
 	 * it does this first and then determines the health of each enemy by using this equation for the enemies 
 	 * enemy1Health = 50 + 2 * level + rand.nextInt(10) * level
@@ -349,7 +347,7 @@ public class LevelController implements Initializable{
 	 * playerMaxHP = 300 + level * 20 + HPChoice * 10;
 	 * 
 	 * it then sets the enemies health according to the role they play either beind a tank or a damage dealer.
-	 * then it sets everything into the corresponding text fields and makes it look pretty.
+	 * then it sets everything into the corresponding text fields.
 	 */
 
 	@Override

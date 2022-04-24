@@ -13,10 +13,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class Interlude1Controller extends LevelController{
-	/*
-	 * okay so we named this an interlude, but its just a simple level up screen
-	 * we figured that it would be more fair to do this than to scale it exponentially and make it too easy
-	 */
 	
 	@FXML
 	Button weapon;
@@ -26,9 +22,9 @@ public class Interlude1Controller extends LevelController{
 	
 	@FXML
 	Label stage;
+	
 	/*
-	 * weapon increase, does as it says on the tin and same for armorIncrease, except armor is really health.
-	 * also if you couldn't tell we did just copy and paste the button event and then changed the scene name.
+	 * controls the interlude screen and handles levelups for the first interlude
 	 */
 	
 	public void weaponIncrease(ActionEvent event) throws IOException {

@@ -31,13 +31,12 @@ public class MainController {
     private ImageView titleGif;
     
     /*
-     * we got three buttons here.
+     * this controller is for the main menu and consists of three buttons, the background and the anchorpane.
      * 
-     * open class which starts the game
-     * 
-     * open credits which opens the credits scene
-     * 
-     * and quit which exits the game. using a function i found in the documentation.
+     * the details of the buttons are below
+     * 		open class which starts the game
+     *		open credits which opens the credits scene
+     *		quit which exits the game. using a function found in the documentation.
      */
     @FXML
     void openClassScreen(ActionEvent event) throws IOException {
