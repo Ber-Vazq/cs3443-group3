@@ -14,10 +14,7 @@ import javafx.stage.Stage;
 
 public class CreditsController {
 	/*
-	 * credits screen
-	 * this is the scene where we give credit to each member for their largest contribution to the project
-	 * 
-	 * includes a back to menu button
+	 *this controls the backToMenu button and is the screen where each member is given credit for the biggest contribution they made to the game
 	 */
     @FXML
     private Button backButton;

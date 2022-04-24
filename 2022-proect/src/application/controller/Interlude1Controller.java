@@ -24,7 +24,7 @@ public class Interlude1Controller extends LevelController{
 	Label stage;
 	
 	/*
-	 * controls the interlude screen and handles levelups for the third interlude
+	 * controls the interlude screen and handles levelups for the first interlude
 	 */
 	
 	public void weaponIncrease(ActionEvent event) throws IOException {

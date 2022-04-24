@@ -10,7 +10,7 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application {
 	@Override
 	/*
-	 * the way to open the app
+	 * opens the app and names the scene
 	 */
 	public void start(Stage primaryStage) {
 		try {

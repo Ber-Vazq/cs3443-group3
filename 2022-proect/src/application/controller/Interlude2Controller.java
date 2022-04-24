@@ -22,7 +22,7 @@ public class Interlude2Controller extends LevelController{
 	@FXML
 	Label stage;
 	/*
-	 * controls the interlude screen and handles levelups for the third interlude
+	 * controls the interlude screen and handles levelups for the second interlude
 	 */
 	
 	public void weaponIncrease(ActionEvent event) throws IOException {
