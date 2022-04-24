@@ -37,5 +37,8 @@
       <Button fx:id="enemy1Attack" layoutX="268.0" layoutY="435.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
       <Button fx:id="enemy2Attack" layoutX="278.0" layoutY="445.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
       <Button fx:id="enemy3Attack" layoutX="288.0" layoutY="455.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="129.0" text="A better weapon, increased attack" textAlignment="CENTER" wrapText="true" />
+      <ImageView fx:id="enemy1AttackImage" fitHeight="150.0" fitWidth="200.0" layoutX="460.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy2AttackImage" fitHeight="150.0" fitWidth="200.0" layoutX="470.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="enemy3AttackImage" fitHeight="150.0" fitWidth="200.0" layoutX="480.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

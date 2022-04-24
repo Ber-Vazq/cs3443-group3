@@ -16,8 +16,29 @@
             <Image url="@../../assets/chimera_title.gif" />
          </image>
       </ImageView>
-      <Button fx:id="playButton" layoutX="154.0" layoutY="255.0" mnemonicParsing="false" onAction="#openClassScreen" text="Play" />
-      <Button fx:id="quitButton" layoutX="406.0" layoutY="255.0" mnemonicParsing="false" onAction="#quitGame" text="Quit" />
-      <Button fx:id="creditsButton" layoutX="273.0" layoutY="255.0" mnemonicParsing="false" onAction="#openCredits" text="Credits" />
+      <Button fx:id="playButton" layoutX="111.0" layoutY="268.0" mnemonicParsing="false" onAction="#openClassScreen" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets.buttons/startButton.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="quitButton" layoutX="382.0" layoutY="268.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="45.0" prefWidth="115.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets.buttons/quitButton.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="creditsButton" layoutX="233.0" layoutY="268.0" mnemonicParsing="false" onAction="#openCredits" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets.buttons/creditsButton.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>

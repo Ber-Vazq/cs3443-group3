@@ -11,7 +11,14 @@
 <AnchorPane prefHeight="429.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LevelController">
    <children>
       <Label fx:id="playerHP" layoutX="84.0" layoutY="287.0" text="150/150" textFill="WHITE" />
-      <Button fx:id="enemy1Attack" layoutX="57.0" layoutY="313.0" mnemonicParsing="false" onAction="#enemy1Press" text="Attack Enemy 1" />
+      <Button fx:id="enemy1Attack" layoutX="57.0" layoutY="312.0" mnemonicParsing="false" onAction="#enemy1Press" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fx:id="enemy1AttackImage" fitHeight="21.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets.buttons/attackTheLesser.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Button layoutX="392.0" layoutY="49.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="173.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fx:id="enemy2" fitHeight="117.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" smooth="false">
@@ -43,8 +50,22 @@
          </image>
       </ImageView>
       <Button fx:id="menuButton" layoutX="503.0" layoutY="390.0" mnemonicParsing="false" onAction="#goToMenu" text="Menu" visible="false" />
-      <Button fx:id="enemy2Attack" layoutX="57.0" layoutY="345.0" mnemonicParsing="false" onAction="#enemy2Press" text="Attack Enemy 2" />
-      <Button fx:id="enemy3Attack" layoutX="57.0" layoutY="378.0" mnemonicParsing="false" onAction="#enemy3Press" text="Attack Enemy 3" />
+      <Button fx:id="enemy2Attack" layoutX="57.0" layoutY="345.0" mnemonicParsing="false" onAction="#enemy2Press" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fx:id="enemy2AttackImage" fitHeight="21.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets.buttons/attackTheLesser.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="enemy3Attack" layoutX="57.0" layoutY="378.0" mnemonicParsing="false" onAction="#enemy3Press" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fx:id="enemy3AttackImage" fitHeight="21.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets.buttons/attackTheLesser.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Label fx:id="enemy1Name" layoutX="349.0" layoutY="23.0" text="Enemy 1" textFill="WHITE" />
       <Label fx:id="enemy1HP" layoutX="349.0" layoutY="38.0" text="50/50" textFill="WHITE" />
       <Label fx:id="enemy2HP" layoutX="457.0" layoutY="32.0" text="75/75" textFill="WHITE" />

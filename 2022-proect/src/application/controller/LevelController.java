@@ -70,11 +70,20 @@ public class LevelController implements Initializable{
 	
 	@FXML
 	ImageView enemy3;
+	
+	@FXML
+	ImageView enemy1AttackImage;
+	
+	@FXML
+	ImageView enemy2AttackImage;
+	
+	@FXML
+	ImageView enemy3AttackImage;
 
 	Random rand = new Random();
 	Random enemyRandom = new Random();
 	int enemyRandomNum;
-	static int playerHealth = 400; // tracks player health across levels
+	static int playerHealth = 300; // tracks player health across levels
 	static int level = 0; // tracks level progress
 	int enemy1Health; //used to update health of monster across levels
 	int enemy2Health; //^
@@ -82,7 +91,7 @@ public class LevelController implements Initializable{
 	int tankMaxHP; //may need to be static
 	int dpsMaxHP; //^
 	int dps2MaxHP;
-	static int playerMaxHP = 400;
+	static int playerMaxHP = 300;
 	int attackRoll;
 	int damageDoneToPlayer1;
 	int damageDoneToPlayer2;
@@ -107,9 +116,9 @@ public class LevelController implements Initializable{
 			playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
 			
 			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
-			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
+			damageDoneToPlayer1 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer2 = rand.nextInt(2 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(6 + 2*level);
 			enemy1Health = enemy1Health - attackRoll;
 			enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
 			
@@ -167,9 +176,9 @@ public class LevelController implements Initializable{
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
-			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
+			damageDoneToPlayer1 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer2 = rand.nextInt(2 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(6 + 2*level);
 			
 			enemy2Health = enemy2Health - attackRoll;
 			enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
@@ -227,9 +236,9 @@ public class LevelController implements Initializable{
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
-			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
-			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
-			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
+			damageDoneToPlayer1 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer2 = rand.nextInt(2 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(6 + 2*level);
 			
 			enemy3Health = enemy3Health - attackRoll;
 			enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dps2MaxHP));
@@ -357,36 +366,48 @@ public class LevelController implements Initializable{
 		switch(enemyRandomNum) {
 			case 1:
 				Image image = new Image("./assets/enemies/eneny1Idle.gif");
+				Image attackImage = new Image("./assets.buttons/attackEnforcer.png");
+				enemy1AttackImage.setImage(attackImage);
 				enemy1.setImage(image);
 				enemy1ButtonName = "Enforcer";
 				enemy1Name.setText("Enforcer");
 				break;
 			case 2:
 				Image image2 = new Image("./assets/enemies/enemy2Idle.gif");
+				Image attackImage2 = new Image("./assets.buttons/attackTheLesser.png");
+				enemy1AttackImage.setImage(attackImage2);
 				enemy1.setImage(image2);
 				enemy1ButtonName = "The Lesser";
 				enemy1Name.setText("The Lesser");
 				break;
 			case 3:
 				Image image3 = new Image("./assets/enemies/enemy3Idle.gif");
+				Image attackImage3 = new Image("./assets.buttons/attackPraetorian.png");
+				enemy1AttackImage.setImage(attackImage3);
 				enemy1.setImage(image3);
 				enemy1ButtonName = "Praetorian";
 				enemy1Name.setText("Praetorian");
 				break;
 			case 4:
 				Image image4 = new Image("./assets/enemies/enemy4Idle.gif");
+				Image attackImage4 = new Image("./assets.buttons/attackStormhead.png");
+				enemy1AttackImage.setImage(attackImage4);
 				enemy1.setImage(image4);
 				enemy1ButtonName = "Stormhead";
 				enemy1Name.setText("Stormhead");
 				break;
 			case 5:
 				Image image5 = new Image("./assets/enemies/enemy5Idle.gif");
+				Image attackImage5 = new Image("./assets.buttons/attackGuardian.png");
+				enemy1AttackImage.setImage(attackImage5);
 				enemy1.setImage(image5);
 				enemy1ButtonName = "Guardian";
 				enemy1Name.setText("Guardian");
 				break;
 			default:
 				Image image6 = new Image("./assets/enemies/enemy6Idle.gif");
+				Image attackImage6 = new Image("./assets.buttons/attackThresher.png");
+				enemy1AttackImage.setImage(attackImage6);
 				enemy1.setImage(image6);
 				enemy1ButtonName = "Thresher";
 				enemy1Name.setText("Thresher");
@@ -396,36 +417,48 @@ public class LevelController implements Initializable{
 		switch(enemyRandomNum) {
 			case 1:
 				Image image = new Image("./assets/enemies/eneny1Idle.gif");
+				Image attackImage = new Image("./assets.buttons/attackEnforcer.png");
+				enemy2AttackImage.setImage(attackImage);
 				enemy2.setImage(image);
 				enemy2ButtonName = "Enforcer";
 				enemy2Name.setText("Enforcer");
 				break;
 			case 2:
 				Image image2 = new Image("./assets/enemies/enemy2Idle.gif");
+				Image attackImage2 = new Image("./assets.buttons/attackTheLesser.png");
+				enemy2AttackImage.setImage(attackImage2);
 				enemy2.setImage(image2);
 				enemy2ButtonName = "The Lesser";
 				enemy2Name.setText("The Lesser");
 				break;
 			case 3:
 				Image image3 = new Image("./assets/enemies/enemy3Idle.gif");
+				Image attackImage3 = new Image("./assets.buttons/attackPraetorian.png");
+				enemy2AttackImage.setImage(attackImage3);
 				enemy2.setImage(image3);
 				enemy2ButtonName = "Praetorian";
 				enemy2Name.setText("Praetorian");
 				break;
 			case 4:
 				Image image4 = new Image("./assets/enemies/enemy4Idle.gif");
+				Image attackImage4 = new Image("./assets.buttons/attackStormhead.png");
+				enemy2AttackImage.setImage(attackImage4);
 				enemy2.setImage(image4);
 				enemy2ButtonName = "Stormhead";
 				enemy2Name.setText("Stormhead");
 				break;
 			case 5:
 				Image image5 = new Image("./assets/enemies/enemy5Idle.gif");
+				Image attackImage5 = new Image("./assets.buttons/attackGuardian.png");
+				enemy2AttackImage.setImage(attackImage5);
 				enemy2.setImage(image5);
 				enemy2ButtonName = "Guardian";
 				enemy2Name.setText("Guardian");
 				break;
 			default:
 				Image image6 = new Image("./assets/enemies/enemy6Idle.gif");
+				Image attackImage6 = new Image("./assets.buttons/attackThresher.png");
+				enemy2AttackImage.setImage(attackImage6);
 				enemy2.setImage(image6);
 				enemy2ButtonName = "Thresher";
 				enemy2Name.setText("Thresher");
@@ -435,46 +468,58 @@ public class LevelController implements Initializable{
 		switch(enemyRandomNum) {
 			case 1:
 				Image image = new Image("./assets/enemies/eneny1Idle.gif");
+				Image attackImage = new Image("./assets.buttons/attackEnforcer.png");
+				enemy3AttackImage.setImage(attackImage);
 				enemy3.setImage(image);
 				enemy3ButtonName = "Enforcer";
 				enemy3Name.setText("Enforcer");
 				break;
 			case 2:
 				Image image2 = new Image("./assets/enemies/enemy2Idle.gif");
+				Image attackImage2 = new Image("./assets.buttons/attackTheLesser.png");
+				enemy3AttackImage.setImage(attackImage2);
 				enemy3.setImage(image2);
 				enemy3ButtonName = "The Lesser";
 				enemy3Name.setText("The Lesser");
 				break;
 			case 3:
 				Image image3 = new Image("./assets/enemies/enemy3Idle.gif");
+				Image attackImage3 = new Image("./assets.buttons/attackPraetorian.png");
+				enemy3AttackImage.setImage(attackImage3);
 				enemy3.setImage(image3);
 				enemy3ButtonName = "Praetorian";
 				enemy3Name.setText("Praetorian");
 				break;
 			case 4:
 				Image image4 = new Image("./assets/enemies/enemy4Idle.gif");
+				Image attackImage4 = new Image("./assets.buttons/attackStormhead.png");
+				enemy3AttackImage.setImage(attackImage4);
 				enemy3.setImage(image4);
 				enemy3ButtonName = "Stormhead";
 				enemy3Name.setText("Stormhead");
 				break;
 			case 5:
 				Image image5 = new Image("./assets/enemies/enemy5Idle.gif");
+				Image attackImage5 = new Image("./assets.buttons/attackGuardian.png");
+				enemy3AttackImage.setImage(attackImage5);
 				enemy3.setImage(image5);
 				enemy3ButtonName = "Guardian";
 				enemy3Name.setText("Guardian");
 				break;
 			default:
 				Image image6 = new Image("./assets/enemies/enemy6Idle.gif");
+				Image attackImage6 = new Image("./assets.buttons/attackThresher.png");
+				enemy3AttackImage.setImage(attackImage6);
 				enemy3.setImage(image6);
 				enemy3ButtonName = "Thresher";
 				enemy3Name.setText("Thresher");
 		}
 		
-		enemy1Attack.setText("Attack " + enemy1ButtonName);
-		enemy2Attack.setText("Attack " + enemy2ButtonName);
-		enemy3Attack.setText("Attack " + enemy3ButtonName);
+		//enemy1Attack.setText("Attack " + enemy1ButtonName);
+		//enemy2Attack.setText("Attack " + enemy2ButtonName);
+		//enemy3Attack.setText("Attack " + enemy3ButtonName);
 		
-		playerMaxHP = 400 + level * 20 + HPChoice * 10;
+		playerMaxHP = 300 + level * 20 + HPChoice * 10;
 		
 		enemy1Health = 50 + 2 * level + rand.nextInt(10) * level; //used to update health of monster across levels
 		enemy2Health = 75 + 5 * level + rand.nextInt(10) * level; //^
