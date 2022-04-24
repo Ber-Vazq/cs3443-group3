@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class LevelController implements Initializable{
@@ -83,7 +84,7 @@ public class LevelController implements Initializable{
 	Random rand = new Random();
 	Random enemyRandom = new Random();
 	int enemyRandomNum;
-	static int playerHealth = 300; // tracks player health across levels
+	static int playerHealth = 200; // tracks player health across levels
 	static int level = 0; // tracks level progress
 	int enemy1Health; //used to update health of monster across levels
 	int enemy2Health; //^
@@ -91,7 +92,7 @@ public class LevelController implements Initializable{
 	int tankMaxHP; //may need to be static
 	int dpsMaxHP; //^
 	int dps2MaxHP;
-	static int playerMaxHP = 300;
+	static int playerMaxHP = 200;
 	int attackRoll;
 	int damageDoneToPlayer1;
 	int damageDoneToPlayer2;
@@ -116,9 +117,9 @@ public class LevelController implements Initializable{
 			playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
 			
 			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
-			damageDoneToPlayer1 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer1 = rand.nextInt(8 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(2 + 2*level);
-			damageDoneToPlayer3 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(8 + 2*level);
 			enemy1Health = enemy1Health - attackRoll;
 			enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
 			
@@ -156,6 +157,7 @@ public class LevelController implements Initializable{
 			if (enemy1Health <= 0) {
 				enemy1Attack.setDisable(true);
 				enemy1Attack.setText(enemy1ButtonName + " is dead");
+				enemy1Attack.setTextFill(Color.WHITE);
 				enemy1.setOpacity(0.25);
 				enemy1HP.setText("Dead");
 			}
@@ -176,9 +178,9 @@ public class LevelController implements Initializable{
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
-			damageDoneToPlayer1 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer1 = rand.nextInt(8 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(2 + 2*level);
-			damageDoneToPlayer3 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(8 + 2*level);
 			
 			enemy2Health = enemy2Health - attackRoll;
 			enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
@@ -217,6 +219,7 @@ public class LevelController implements Initializable{
 			if (enemy2Health <= 0) {
 				enemy2Attack.setDisable(true);
 				enemy2Attack.setText(enemy2ButtonName + " is dead");
+				enemy2Attack.setTextFill(Color.WHITE);
 				enemy2.setOpacity(0.25);
 				enemy2HP.setText("Dead");
 			}
@@ -236,9 +239,9 @@ public class LevelController implements Initializable{
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
-			damageDoneToPlayer1 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer1 = rand.nextInt(8 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(2 + 2*level);
-			damageDoneToPlayer3 = rand.nextInt(6 + 2*level);
+			damageDoneToPlayer3 = rand.nextInt(8 + 2*level);
 			
 			enemy3Health = enemy3Health - attackRoll;
 			enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dps2MaxHP));
@@ -275,6 +278,7 @@ public class LevelController implements Initializable{
 			if (enemy3Health <= 0) {
 				enemy3Attack.setDisable(true); // disables attack button
 				enemy3Attack.setText(enemy3ButtonName + " is dead"); // displays text on button
+				enemy3Attack.setTextFill(Color.WHITE);
 				enemy3.setOpacity(0.25); // dims enemy
 				enemy3HP.setText("Dead"); // changes hp bar to dead
 			}
@@ -519,7 +523,7 @@ public class LevelController implements Initializable{
 		//enemy2Attack.setText("Attack " + enemy2ButtonName);
 		//enemy3Attack.setText("Attack " + enemy3ButtonName);
 		
-		playerMaxHP = 300 + level * 20 + HPChoice * 10;
+		playerMaxHP = 200 + level * 5 + HPChoice * 10;
 		
 		enemy1Health = 50 + 2 * level + rand.nextInt(10) * level; //used to update health of monster across levels
 		enemy2Health = 75 + 5 * level + rand.nextInt(10) * level; //^
