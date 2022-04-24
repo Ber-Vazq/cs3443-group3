@@ -74,7 +74,7 @@ public class LevelController implements Initializable{
 	Random rand = new Random();
 	Random enemyRandom = new Random();
 	int enemyRandomNum;
-	static int playerHealth = 300; // tracks player health across levels
+	static int playerHealth = 400; // tracks player health across levels
 	static int level = 0; // tracks level progress
 	int enemy1Health; //used to update health of monster across levels
 	int enemy2Health; //^
@@ -82,7 +82,7 @@ public class LevelController implements Initializable{
 	int tankMaxHP; //may need to be static
 	int dpsMaxHP; //^
 	int dps2MaxHP;
-	static int playerMaxHP = 300;
+	static int playerMaxHP = 400;
 	int attackRoll;
 	int damageDoneToPlayer1;
 	int damageDoneToPlayer2;
@@ -107,7 +107,7 @@ public class LevelController implements Initializable{
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
 			
-			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
+			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
 			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
 			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
@@ -167,7 +167,7 @@ public class LevelController implements Initializable{
 	public void enemy2Press(ActionEvent event) {
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
+			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
 			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
 			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
@@ -227,7 +227,7 @@ public class LevelController implements Initializable{
 	public void enemy3Press(ActionEvent event) {
 		if (!(playerHealth <= 0)) {
 			playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
-			attackRoll = rand.nextInt(50 + 3*ATKChoice) + 2*level;
+			attackRoll = rand.nextInt(50 + 5*ATKChoice) + 2*level;
 			damageDoneToPlayer1 = rand.nextInt(10 + 2*level);
 			damageDoneToPlayer2 = rand.nextInt(5 + 2*level);
 			damageDoneToPlayer3 = rand.nextInt(10 + 2*level);
@@ -476,7 +476,7 @@ public class LevelController implements Initializable{
 		enemy2Attack.setText("Attack " + enemy2ButtonName);
 		enemy3Attack.setText("Attack " + enemy3ButtonName);
 		
-		playerMaxHP = 300 + level * 20 + HPChoice * 10;
+		playerMaxHP = 400 + level * 20 + HPChoice * 10;
 		
 		enemy1Health = 50 + 2 * level + rand.nextInt(10) * level; //used to update health of monster across levels
 		enemy2Health = 75 + 5 * level + rand.nextInt(10) * level; //^
