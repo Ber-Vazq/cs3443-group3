@@ -320,7 +320,7 @@ public class LevelController implements Initializable{
 	        window.setScene(scene);
 	        window.show();
 		} else if (level == 3) {
-			playerHealth = 400;// resets health to original value
+			playerHealth = 300;// resets health to original value
 			level = 0; // resets level
 			Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/credits.fxml"));// pane you are GOING TO
 	        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
