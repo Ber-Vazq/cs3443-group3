@@ -81,7 +81,7 @@
       <Label fx:id="enemy3HP" layoutX="395.0" layoutY="326.0" text="50/50" textFill="WHITE" />
       <Button fx:id="nextLevelButton" disable="true" layoutX="194.0" layoutY="227.0" mnemonicParsing="false" onAction="#goNextLevel" style="-fx-background-color: transparent;" visible="false">
          <graphic>
-            <ImageView fitHeight="28.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="nextLevelButtonImage" fitHeight="28.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets.buttons/nextLevelButtonImage.png" />
                </image>

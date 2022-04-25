@@ -61,6 +61,9 @@ public class LevelController implements Initializable{
 	Button nextLevelButton;
 	
 	@FXML
+	ImageView nextLevelButtonImage;
+	
+	@FXML
 	Button menuButton;
 	
 	@FXML
@@ -84,7 +87,7 @@ public class LevelController implements Initializable{
 	Random rand = new Random();
 	Random enemyRandom = new Random();
 	int enemyRandomNum;
-	static int playerHealth = 300; // tracks player health across levels
+	static int playerHealth = 200; // tracks player health across levels
 	static int level = 0; // tracks level progress
 	int enemy1Health; //monster health
 	int enemy2Health; //^
@@ -92,7 +95,7 @@ public class LevelController implements Initializable{
 	int tankMaxHP; //monster max hp
 	int dpsMaxHP; //^
 	int dps2MaxHP; //^^
-	static int playerMaxHP = 300; // used to track player max hp
+	static int playerMaxHP = 200; // used to track player max hp
 	int attackRoll; //player damage
 	int damageDoneToPlayer1; //monster damage
 	int damageDoneToPlayer2; //^
@@ -125,15 +128,15 @@ public class LevelController implements Initializable{
 			enemy1Health = enemy1Health - attackRoll;
 			enemy1HP.setText(String.valueOf(enemy1Health) + "/" + String.valueOf(dpsMaxHP));
 			
-			if (enemy1Health != 0) {
+			if (enemy1Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer1;
 				playerHP.setText(String.valueOf(playerHealth) + "/" + String.valueOf(playerMaxHP));
 			} 
-			if (enemy2Health != 0) {
+			if (enemy2Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer2;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
-			if (enemy3Health != 0) {
+			if (enemy3Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer3;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
@@ -165,10 +168,11 @@ public class LevelController implements Initializable{
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
 			if (level == 3) {
-				nextLevelButton.setText("Obliterate yourself");
+				Image image = new Image("./assets.buttons/obliterateYourselfButton.png");
+				nextLevelButtonImage.setImage(image);
 			}
 			nextLevelButton.setVisible(true);
-			playerHealth += (level + 1) * 20;
+			playerHealth += (level + 1) * 5;
 		}
 		
 	}
@@ -184,15 +188,15 @@ public class LevelController implements Initializable{
 			enemy2Health = enemy2Health - attackRoll;
 			enemy2HP.setText(String.valueOf(enemy2Health) + "/" + String.valueOf(tankMaxHP));
 			
-			if (enemy1Health != 0) {
+			if (enemy1Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer1;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			} 
-			if (enemy2Health != 0) {
+			if (enemy2Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer2;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
-			if (enemy3Health != 0) {
+			if (enemy3Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer3;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
@@ -224,10 +228,11 @@ public class LevelController implements Initializable{
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false);
 			if (level == 3) {
-				nextLevelButton.setText("Obliterate yourself");
+				Image image = new Image("./assets.buttons/obliterateYourselfButton.png");
+				nextLevelButtonImage.setImage(image);
 			}
 			nextLevelButton.setVisible(true);
-			playerHealth += (level + 1) * 20;
+			playerHealth += (level + 1) * 5;
 		}
 	}
 	
@@ -242,15 +247,15 @@ public class LevelController implements Initializable{
 			enemy3Health = enemy3Health - attackRoll;
 			enemy3HP.setText(String.valueOf(enemy3Health) + "/" + String.valueOf(dps2MaxHP));
 			
-			if (enemy1Health != 0) {
+			if (enemy1Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer1;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			} 
-			if (enemy2Health != 0) {
+			if (enemy2Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer2;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
-			if (enemy3Health != 0) {
+			if (enemy3Health > 0) {
 				playerHealth = playerHealth - damageDoneToPlayer3;
 				playerHP.setText(String.valueOf(playerHealth)+"/"+String.valueOf(playerMaxHP));
 			}
@@ -280,10 +285,11 @@ public class LevelController implements Initializable{
 		if (enemy1Health <= 0 && enemy2Health <= 0 && enemy3Health <= 0 && playerHealth > 0) {
 			nextLevelButton.setDisable(false); //enables next level button
 			if (level == 3) {
-				nextLevelButton.setText("Obliterate yourself");
+				Image image = new Image("./assets.buttons/obliterateYourselfButton.png");
+				nextLevelButtonImage.setImage(image);
 			}
 			nextLevelButton.setVisible(true); // shows next level button
-			playerHealth += (level + 1) * 20; //heals player
+			playerHealth += (level + 1) * 5; //heals player
 		}
 	}
 	
@@ -293,7 +299,7 @@ public class LevelController implements Initializable{
 	 */
 	
 	public void goToMenu(ActionEvent event) throws IOException {
-		playerHealth = 300;
+		playerHealth = 200;
 		Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/mainMenu.fxml"));// pane you are GOING TO
         Scene scene = new Scene(mainPane2);// pane you are GOING TO show
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();// pane you are ON
@@ -326,7 +332,7 @@ public class LevelController implements Initializable{
 	        window.setScene(scene);
 	        window.show();
 		} else if (level == 3) {
-			playerHealth = 300;// resets health to original value
+			playerHealth = 200;// resets health to original value
 			level = 0; // resets level
 			Parent mainPane2 = FXMLLoader.load(getClass().getClassLoader().getResource("application/view/credits.fxml"));// pane you are GOING TO
 	        Scene scene = new Scene(mainPane2);// pane you are GOING TO show
@@ -512,7 +518,7 @@ public class LevelController implements Initializable{
 				enemy3Name.setText("Thresher");
 		}
 		
-		playerMaxHP = 300 + level * 5 + HPChoice * 10;
+		playerMaxHP = 200 + level * 5 + HPChoice * 10;
 		
 		enemy1Health = 50 + 2 * level + rand.nextInt(10) * level; //used to update health of monster across levels
 		enemy2Health = 75 + 5 * level + rand.nextInt(10) * level; //^
