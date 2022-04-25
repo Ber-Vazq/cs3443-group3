@@ -25,8 +25,8 @@ Group Members are as follows(in no particular order):
 This is our attempt at a text-based pseudo roguelike game focused around dystopian elements(akin to Shadowrun, CyberPunk and the derivatives).
 
 KNOWN BUGS:
-	If using version 8 of java our menu gif will not be visible, as of now no other bugs reported
-	If you die before finishing the game then restart your health will stay at the value from before
+	If using version 8 of java our menu gif will not be visible
+	Player and enemy can die on the same turn
 
 There is no login info, you just press play
 
