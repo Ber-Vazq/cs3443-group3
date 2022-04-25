@@ -113,7 +113,7 @@ public class LevelController implements Initializable{
 	 * and a base +6 bonus to attack at level 3
 	 * 
 	 * it also checks if the level is over and adds to your health based off of the following formula
-	 * 	playerHealth += (level + 1) * 20
+	 * 	playerHealth += (level + 1) * 5
 	 * 
 	 */
 	public void enemy1Press(ActionEvent event) {
@@ -356,7 +356,7 @@ public class LevelController implements Initializable{
 	 * with one enemy always being a bit stronger than the other two in terms of health.
 	 * 
 	 * it also does the same with the player though the equation is a bit different
-	 * playerMaxHP = 300 + level * 20 + HPChoice * 10;
+	 * playerMaxHP = 200 + level * 5 + HPChoice * 10;
 	 * 
 	 * it then sets the enemies health according to the role they play either a tank or a damage dealer.
 	 * then it sets everything into the corresponding text fields.

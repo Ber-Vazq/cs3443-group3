@@ -26,7 +26,6 @@ This is our attempt at a text-based pseudo roguelike game focused around dystopi
 
 KNOWN BUGS:
 	If using version 8 of java our menu gif will not be visible
-	Player and enemy can die on the same turn
 
 There is no login info, you just press play
 
